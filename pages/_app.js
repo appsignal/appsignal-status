@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import "@appsignal/design-system";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
