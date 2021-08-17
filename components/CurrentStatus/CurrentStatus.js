@@ -37,7 +37,7 @@ const CurrentStatus = ({ status }) => {
       <div className="container text-center">
         { renderIcon() }
         <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl">
-          { status == "UP" ? "No known issues" : "We’re experiencing some issues"}
+          { status == "UP" ? "No known issues" : "We’re experiencing issues"}
         </h1>
         <p className="text-gray-700">
           { status == "UP"
