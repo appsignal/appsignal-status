@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 
-import Header from "../components/Header/Header"
-import CurrentStatus from "../components/CurrentStatus/CurrentStatus"
-import Footer from "../components/Footer/Footer"
-import StatusUpdates from "../components/StatusUpdates/StatusUpdates"
-import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors"
+import Header from "../components/Header/Header";
+import CurrentStatus from "../components/CurrentStatus/CurrentStatus";
+import Footer from "../components/Footer/Footer";
+import StatusUpdates from "../components/StatusUpdates/StatusUpdates";
+import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors";
 
 const App = ({ statusPage }) => {
   return (
@@ -12,7 +13,7 @@ const App = ({ statusPage }) => {
       <Head>
         <title>{statusPage.title} Status</title>
       </Head>
-      <Header/>
+      <Header />
       <main>
         <CurrentStatus status={statusPage.status} />
         <UptimeMonitors uptimeMonitors={statusPage.uptime_monitors} />
@@ -20,30 +21,38 @@ const App = ({ statusPage }) => {
       </main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export async function getServerSideProps({ req }) {
-  const { headers } = req
-  const hostname = headers['cdn-host'] || "status.appsignal-status.online"
-  const result = await fetch(`https://api.appsignal-status.online/status_pages/${Buffer.from(hostname).toString('base64')}.json`)
+  const { headers } = req;
+  const hostname = headers["cdn-host"] || "status.appsignal-status.online";
+  const result = await fetch(
+    `https://api.appsignal-status.online/status_pages/${Buffer.from(
+      hostname
+    ).toString("base64")}.json`
+  );
 
   if (!result.ok) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
-  const data = await result.json()
+  const data = await result.json();
   if (!data) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
 
   return {
-    props: { statusPage: data }
-  }
+    props: { statusPage: data },
+  };
 }
 
-export default App
+App.propTypes = {
+  statusPage: PropTypes.object,
+};
+
+export default App;

@@ -1,5 +1,5 @@
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -12,7 +12,12 @@ const Header = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Image src="/assets/appsignal-logo.svg" alt="AppSignal Logo" height="20" width="108" />
+            <Image
+              src="/assets/appsignal-logo.svg"
+              alt="AppSignal Logo"
+              height="20"
+              width="108"
+            />
           </a>
           <div className="h-6 w-px bg-gray-200 rounded" />
           <Link href="/">
@@ -20,12 +25,15 @@ const Header = () => {
           </Link>
         </nav>
 
-        <a href="mailto:contact@appsignal.com" className="c-button c-button--gray c-button--xs sm:c-button--sm">
+        <a
+          href="mailto:contact@appsignal.com"
+          className="c-button c-button--gray c-button--xs sm:c-button--sm"
+        >
           Get in touch
         </a>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
