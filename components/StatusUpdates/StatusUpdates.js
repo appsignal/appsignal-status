@@ -26,7 +26,7 @@ const StatusUpdates = () => {
   return (
     <section className="mt-20 mb-16">
       <div className="container">
-        <a name="status-updates" id="status-updates">
+        <a name="status-updates" id="status-updates" className="no-underline">
           <h2 className="c_h-heading c_h-heading--2xl mb-8 text-center">
             Status updates
           </h2>
