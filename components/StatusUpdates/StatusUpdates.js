@@ -3,19 +3,19 @@ import StatusUpdate from "./StatusUpdate";
 
 const statusUpdates = [
   {
-    type: "success",
+    status: "success",
     title: "All systems are back up!",
     description: "",
     time: "15th Aug 08:11 CET",
   },
   {
-    type: "error",
+    status: "error",
     title: "We’re experiencing some issues",
     description: "Here’s a message with some context.",
     time: "15th Aug 07:53 CET",
   },
   {
-    type: "warning",
+    status: "warning",
     title: "Planned maintainance on August 15th between 02:00pm and 03:00pm",
     description: "Here’s a message with some context.",
     time: "11th Aug 15:11 CET",
@@ -35,7 +35,7 @@ const StatusUpdates = () => {
           {statusUpdates.map((update, index) => (
             <StatusUpdate
               key={index}
-              type={update.type}
+              status={update.status}
               title={update.title}
               description={update.description}
               time={update.time}
