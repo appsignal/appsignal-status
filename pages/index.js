@@ -24,13 +24,17 @@ const App = ({ statusPage }) => {
   );
 };
 
-export async function getServerSideProps({ req }) {
-  const { headers } = req;
+export async function getServerSideProps() {
+  /*const { headers } = req;
   const hostname = headers["cdn-host"] || "status.appsignal-status.online";
   const result = await fetch(
     `https://api.appsignal-status.online/status_pages/${Buffer.from(
       hostname
     ).toString("base64")}.json`
+  );*/
+
+  const result = await fetch(
+    "https://staging.lol/api/status_pages/c3RhdHVzLmFwcHNpZ25hbC1zdGF0dXMub25saW5l.json"
   );
 
   if (!result.ok) {
