@@ -8,12 +8,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const iconMapping = {
-  UP: {
+  up: {
     outerStyle: "bg-green-200",
     innerStyle: "bg-green-500",
     icon: faCheck,
   },
-  DOWN: {
+  down: {
     outerStyle: "bg-red-200",
     innerStyle: "bg-red-500",
     icon: faExclamationTriangle,
