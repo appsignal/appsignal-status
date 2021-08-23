@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@appsignal/design-system": "^9.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@tippyjs/react": "^4.2.5",
     "autoprefixer": "^10.0.2",
     "next": "11.0.1",
     "react": "17.0.2",

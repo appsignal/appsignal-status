@@ -1,7 +1,26 @@
-import StatusPage from "../components/StatusPage/StatusPage"
+import Head from "next/head";
+
+import Header from "../components/Header/Header"
+import CurrentStatus from "../components/CurrentStatus/CurrentStatus"
+import Footer from "../components/Footer/Footer"
+import StatusUpdates from "../components/StatusUpdates/StatusUpdates"
+import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors"
 
 const App = ({ statusPage }) => {
-  return <StatusPage statusPage={statusPage} />
+  return (
+    <>
+      <Head>
+        <title>{statusPage.title} Status</title>
+      </Head>
+      <Header/>
+      <main>
+        <CurrentStatus status={statusPage.status} />
+        <UptimeMonitors uptimeMonitors={statusPage.uptime_monitors} />
+        <StatusUpdates statusUpdates={[]} />
+      </main>
+      <Footer />
+    </>
+  )
 }
 
 export async function getServerSideProps({ req }) {
