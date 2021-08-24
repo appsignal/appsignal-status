@@ -33,7 +33,12 @@ const StatusIcon = ({ status }) => {
     <span
       className={`flex items-center justify-center h-4 w-4 rounded-full ${style}`}
     >
-      <FontAwesomeIcon icon={icon} style={{ fontSize: "8px" }} fixedWidth />
+      <FontAwesomeIcon
+        role="img"
+        icon={icon}
+        style={{ fontSize: "8px" }}
+        fixedWidth
+      />
     </span>
   );
 };

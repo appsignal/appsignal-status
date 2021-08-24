@@ -20,11 +20,11 @@ const iconMapping = {
   },
 };
 
-const CurrentStatus = ({ status }) => {
+const CurrentStatus = ({ state }) => {
   const renderIcon = () => {
-    const outerStyle = iconMapping[status].outerStyle;
-    const innerStyle = iconMapping[status].innerStyle;
-    const icon = iconMapping[status].icon;
+    const outerStyle = iconMapping[state].outerStyle;
+    const innerStyle = iconMapping[state].innerStyle;
+    const icon = iconMapping[state].icon;
 
     return (
       <div
@@ -48,10 +48,10 @@ const CurrentStatus = ({ status }) => {
       <div className="container text-center">
         {renderIcon()}
         <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl">
-          {status == "up" ? "No known issues" : "We’re experiencing issues"}
+          {state == "up" ? "No known issues" : "We’re experiencing issues"}
         </h1>
         <p className="text-gray-700">
-          {status == "up" ? (
+          {state == "up" ? (
             <>
               Don{"'"}t agree with this? Please{" "}
               <a href="mailto:contact@appsignal.com">let us know</a>.
@@ -72,7 +72,7 @@ const CurrentStatus = ({ status }) => {
 };
 
 CurrentStatus.propTypes = {
-  status: PropTypes.oneOf(["up", "down"]).isRequired,
+  state: PropTypes.oneOf(["up", "down"]).isRequired,
 };
 
 export default CurrentStatus;
