@@ -18,6 +18,15 @@ jobs:
       run: yarn
     - name: Run Format check
       run: yarn format:check
+
+  tests:  
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run jest
+      run: yarn test
   build:
     runs-on: ubuntu-latest
     steps:
