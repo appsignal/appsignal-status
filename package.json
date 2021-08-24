@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,mdx,json}'",
+    "format:check": "prettier --check './**/*.{js,jsx,ts,tsx,css,md,mdx,json}'"
   },
   "dependencies": {
     "@appsignal/design-system": "^9.1.0",
