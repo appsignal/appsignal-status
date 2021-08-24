@@ -8,12 +8,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const iconMapping = {
-  UP: {
+  up: {
     outerStyle: "bg-green-200",
     innerStyle: "bg-green-500",
     icon: faCheck,
   },
-  DOWN: {
+  down: {
     outerStyle: "bg-red-200",
     innerStyle: "bg-red-500",
     icon: faExclamationTriangle,
@@ -48,10 +48,10 @@ const CurrentStatus = ({ status }) => {
       <div className="container text-center">
         {renderIcon()}
         <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl">
-          {status == "UP" ? "No known issues" : "We’re experiencing issues"}
+          {status == "up" ? "No known issues" : "We’re experiencing issues"}
         </h1>
         <p className="text-gray-700">
-          {status == "UP" ? (
+          {status == "up" ? (
             <>
               Don{"'"}t agree with this? Please{" "}
               <a href="mailto:contact@appsignal.com">let us know</a>.
@@ -72,7 +72,7 @@ const CurrentStatus = ({ status }) => {
 };
 
 CurrentStatus.propTypes = {
-  status: PropTypes.oneOf(["UP", "DOWN"]).isRequired,
+  status: PropTypes.oneOf(["up", "down"]).isRequired,
 };
 
 export default CurrentStatus;
