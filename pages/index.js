@@ -40,6 +40,7 @@ export async function getServerSideProps({ req }) {
   }
 
   const data = await result.json();
+
   if (!data) {
     return {
       notFound: true,
