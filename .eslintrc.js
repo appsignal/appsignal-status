@@ -22,6 +22,10 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:testing-library/recommended",
+    "plugin:testing-library/react",
     "plugin:prettier/recommended", // Make this the last element so prettier config overrides other formatting rules
   ],
   rules: {
