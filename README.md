@@ -19,13 +19,13 @@ Clone the repository and install the required Node packages:
 ```
   git clone git@github.com:appsignal/appsignal-status.git
   cd appsignal-status
-  npm install
+  yarn install
 ```
 
 # Run the project
 
 ```
-npm run dev
+yarn dev
 ```
 
 # Testing
@@ -33,7 +33,7 @@ npm run dev
 Every component should be covered by (Jest) tests, run the tests with:
 
 ```
-npm run test
+yarn test
 ```
 
 ## Support
