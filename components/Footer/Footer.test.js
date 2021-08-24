@@ -1,11 +1,11 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import Footer from "./Footer";
 
 describe("Footer", () => {
   test("it renders without problems", () => {
-    render(<Footer />);
+    const { container } = render(<Footer />);
 
-    expect(screen).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
