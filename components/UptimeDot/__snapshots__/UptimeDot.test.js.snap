@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UptimeDot renders without problems 1`] = `
+<div>
+  <div
+    class="h-8 flex-grow bg-green-500 rounded"
+  />
+</div>
+`;

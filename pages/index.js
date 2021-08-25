@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import Head from "next/head";
 
-import Header from "../components/Header/Header";
-import CurrentStatus from "../components/CurrentStatus/CurrentStatus";
-import Footer from "../components/Footer/Footer";
-import StatusUpdates from "../components/StatusUpdates/StatusUpdates";
-import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors";
+import Header from "../components/Header";
+import CurrentStatus from "../components/CurrentStatus";
+import Footer from "../components/Footer";
+import StatusUpdates from "../components/StatusUpdates";
+import UptimeMonitors from "../components/UptimeMonitors";
 
 const App = ({ statusPage }) => {
   return (
