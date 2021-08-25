@@ -16,7 +16,10 @@ const App = ({ statusPage }) => {
       <Header />
       <main>
         <CurrentStatus state={statusPage.state} />
-        <UptimeMonitors uptimeMonitors={statusPage.uptime_monitors} />
+        <UptimeMonitors
+          hostname={statusPage.hostname}
+          uptimeMonitors={statusPage.uptime_monitors}
+        />
         <StatusUpdates statusUpdates={[]} />
       </main>
       <Footer />

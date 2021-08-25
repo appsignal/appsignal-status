@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import UptimeMonitor from "./UptimeMonitor";
 
-const UptimeMonitors = ({ uptimeMonitors }) => {
+const UptimeMonitors = ({ hostname, uptimeMonitors }) => {
   const renderUptimeMonitors = () => {
     if (uptimeMonitors.length === 0) {
       return (
@@ -12,7 +12,7 @@ const UptimeMonitors = ({ uptimeMonitors }) => {
     }
 
     return uptimeMonitors.map((m) => (
-      <UptimeMonitor key={m.url} uptimeMonitor={m} />
+      <UptimeMonitor key={m.url} uptimeMonitor={m} hostname={hostname} />
     ));
   };
   return (
@@ -28,6 +28,7 @@ const UptimeMonitors = ({ uptimeMonitors }) => {
 
 UptimeMonitors.propTypes = {
   uptimeMonitors: PropTypes.array.isRequired,
+  hostname: PropTypes.string.isRequired,
 };
 
 export default UptimeMonitors;
