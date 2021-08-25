@@ -50,7 +50,7 @@ describe("UptimeDot", () => {
 
     fireEvent.mouseEnter(dot);
 
-    expect(screen.getByText("Aug. 7th")).toBeInTheDocument();
+    expect(screen.getByText("Aug. 6th")).toBeInTheDocument();
     expect(screen.getByText("No outage")).toBeInTheDocument();
   });
 });
