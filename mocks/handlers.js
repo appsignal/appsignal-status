@@ -1,9 +1,19 @@
 import { rest } from "msw";
 
+const alwaysDown = require("./monitors/always-down.json");
+const blog = require("./monitors/blog.json");
+const homepage = require("./monitors/homepage.json");
+
+const monitorMapping = {
+  "always-down": alwaysDown,
+  blog,
+  homepage,
+};
+
 export const handlers = [
   rest.get(
     "https://api.appsignal-status.online/status_pages/:statusPageId.json",
-    (req, res, ctx) => {
+    (_req, res, ctx) => {
       return res(
         ctx.json({
           id: "page-up",
@@ -13,20 +23,20 @@ export const handlers = [
           state: "up",
           uptime_monitors: [
             {
-              id: "monitor-homepage",
+              id: "homepage",
               title: "homepage",
               url: "https://www.appsignal.com",
               description:
                 "The AppSignal homepage. Notify #operations when this alert is triggered. ",
             },
             {
-              id: "monitor-blog",
+              id: "blog",
               title: "blog",
               url: "https://blog.appsignal.com",
               description: "",
             },
             {
-              id: "monitor-down",
+              id: "always-down",
               title: "Always Down",
               url: "https://banana.appsignal.com",
               description: "This endpoint will always be down!",
@@ -34,6 +44,13 @@ export const handlers = [
           ],
         })
       );
+    }
+  ),
+  rest.get(
+    "https://api.appsignal-status.online/status_pages/:statusPageId/monitors/:monitorId.json",
+    (req, res, ctx) => {
+      const { monitorId } = req.params;
+      return res(ctx.json(monitorMapping[monitorId]));
     }
   ),
 ];
