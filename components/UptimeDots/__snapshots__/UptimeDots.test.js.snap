@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UptimeDots renders without errors 1`] = `
+<div>
+  <div
+    class="flex space-x-1"
+  >
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+  </div>
+</div>
+`;

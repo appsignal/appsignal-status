@@ -1,14 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 
-import BarChart from "../BarChart";
 import OutagesOverlay from "../OutagesOverlay";
-import UptimeDot from "../UptimeDot";
+import UptimeDots from "../UptimeDots";
 
 const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
-  const [overlayOpen, setOverlayOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [overlayOpen, setOverlayOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
   const [monitor, setMonitor] = React.useState([]);
 
   React.useEffect(() => {
@@ -46,10 +44,7 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
               Monitoring from 4 locations
             </p>
           </div>
-          {monitor.timeseries.slice(0, 10).map((timeserie) => (
-            <UptimeDot timeserie={timeserie} key={timeserie.timestamp} />
-          ))}
-          <BarChart />
+          <UptimeDots timeseries={monitor.timeseries.slice(0, 30)} />
         </div>
 
         <OutagesOverlay

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import UptimeMonitor from "./UptimeMonitor";
+import UptimeMonitor from "../UptimeMonitor";
 
-const UptimeMonitors = ({ hostname, uptimeMonitors }) => {
+const UptimeMonitors = ({ statusPage }) => {
   const renderUptimeMonitors = () => {
-    if (uptimeMonitors.length === 0) {
+    if (statusPage.uptime_monitors.length === 0) {
       return (
         <div className="max-w-lg mx-auto bg-white shadow-sm rounded px-6 py-5">
           <p className="text-gray-700 italic">No uptime monitors added yet.</p>
@@ -11,8 +11,12 @@ const UptimeMonitors = ({ hostname, uptimeMonitors }) => {
       );
     }
 
-    return uptimeMonitors.map((m) => (
-      <UptimeMonitor key={m.url} uptimeMonitor={m} hostname={hostname} />
+    return statusPage.uptime_monitors.map((monitor) => (
+      <UptimeMonitor
+        key={monitor.url}
+        uptimeMonitor={monitor}
+        hostname={statusPage.hostname}
+      />
     ));
   };
   return (
@@ -27,8 +31,10 @@ const UptimeMonitors = ({ hostname, uptimeMonitors }) => {
 };
 
 UptimeMonitors.propTypes = {
-  uptimeMonitors: PropTypes.array.isRequired,
-  hostname: PropTypes.string.isRequired,
+  statusPage: PropTypes.shape({
+    hostname: PropTypes.string.isRequired,
+    uptime_monitors: PropTypes.array.isRequired,
+  }).isRequired,
 };
 
 export default UptimeMonitors;
