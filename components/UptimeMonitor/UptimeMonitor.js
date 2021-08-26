@@ -44,7 +44,7 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
               Monitoring from 4 locations
             </p>
           </div>
-          <UptimeDots timeseries={monitor.timeseries.slice(0, 30)} />
+          <UptimeDots timeseries={monitor.timeseries} />
         </div>
 
         <OutagesOverlay

@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
+import dayjs from "dayjs";
 
 import UptimeDot from "../UptimeDot";
+
+export const sortedTimeseries = (timeseries) => {
+  return timeseries.sort(
+    (a, b) => new Date(a.timestamp) - new Date(b.timestamp)
+  );
+};
 
 const UptimeDots = ({ timeseries }) => {
   return (
