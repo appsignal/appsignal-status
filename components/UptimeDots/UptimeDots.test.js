@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import UptimeDots, { sortedTimeseries } from "./UptimeDots";
+import UptimeDots, { sortedTimeseries, timeseriesByDay } from "./UptimeDots";
 
 import homepageMock from "../../mocks/monitors/homepage.json";
 
@@ -31,5 +31,62 @@ describe("#sortedTimeseries", () => {
     expect(timeseries[2].timestamp).toEqual("2021-08-11T17:00:00.000Z");
     expect(timeseries[3].timestamp).toEqual("2021-08-21T18:00:00.000Z");
     expect(timeseries[4].timestamp).toEqual("2021-08-24T14:00:00.000Z");
+  });
+});
+
+describe("#timeseriesByDay", () => {
+  test("it groups the timeseries by day and counts the downtime", () => {
+    const groupedTimeseries = timeseriesByDay(homepageMock.timeseries).slice(
+      0,
+      5
+    );
+
+    expect(groupedTimeseries).toEqual([
+      {
+        timestamp: "2021-07-26T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          "south-america": 0,
+          "north-america": 0,
+          europe: 0,
+        },
+      },
+      {
+        timestamp: "2021-07-27T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          "south-america": 0,
+          "north-america": 0,
+          europe: 0,
+        },
+      },
+      {
+        timestamp: "2021-07-28T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          "south-america": 0,
+          "north-america": 0,
+          europe: 0,
+        },
+      },
+      {
+        timestamp: "2021-07-29T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          "south-america": 0,
+          "north-america": 0,
+          europe: 0,
+        },
+      },
+      {
+        timestamp: "2021-07-30T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          "south-america": 0,
+          "north-america": 0,
+          europe: 0,
+        },
+      },
+    ]);
   });
 });
