@@ -42,6 +42,7 @@ const UptimeDot = ({ timeserie }) => {
       }
     >
       <div
+        data-testid="uptimeDot"
         className={`h-8 flex-grow ${
           state(timeserie.values) === "up" ? "bg-green-500" : "bg-red-500"
         } rounded`}

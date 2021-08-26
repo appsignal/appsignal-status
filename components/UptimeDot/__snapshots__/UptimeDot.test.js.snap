@@ -4,6 +4,7 @@ exports[`UptimeDot renders without problems 1`] = `
 <div>
   <div
     class="h-8 flex-grow bg-green-500 rounded"
+    data-testid="uptimeDot"
   />
 </div>
 `;
