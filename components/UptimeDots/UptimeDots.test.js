@@ -45,10 +45,10 @@ describe("#timeseriesByDay", () => {
       {
         timestamp: "2021-07-26T00:00:00Z",
         values: {
-          "asia-pacific": 0,
+          "asia-pacific": 20,
           "south-america": 0,
           "north-america": 0,
-          europe: 0,
+          europe: 5,
         },
       },
       {

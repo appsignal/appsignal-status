@@ -187,10 +187,10 @@
     {
       "timestamp": "2021-07-26T13:00:00.000Z",
       "values": {
-        "asia-pacific": 0,
+        "asia-pacific": 10,
         "south-america": 0,
         "north-america": 0,
-        "europe": 0
+        "europe": 4
       }
     },
     {
@@ -6073,10 +6073,10 @@
     {
       "timestamp": "2021-07-26T17:00:00.000Z",
       "values": {
-        "asia-pacific": 0,
+        "asia-pacific": 10,
         "south-america": 0,
         "north-america": 0,
-        "europe": 0
+        "europe": 1
       }
     },
     {
