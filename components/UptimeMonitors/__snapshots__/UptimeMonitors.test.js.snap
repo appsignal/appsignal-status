@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UptimeMonitors renders without problems 1`] = `
+<div>
+  <section
+    class="mt-16 mb-20"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="max-w-lg mx-auto bg-white shadow-sm rounded divide-y divide-gray-200"
+      >
+        Loading
+        Loading
+        Loading
+      </div>
+    </div>
+  </section>
+</div>
+`;
