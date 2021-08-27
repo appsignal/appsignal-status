@@ -10,6 +10,50 @@ exports[`UptimeDots renders without errors 1`] = `
       data-testid="uptimeDot"
     />
     <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
       class="h-8 flex-grow bg-red-500 rounded"
       data-testid="uptimeDot"
     />
@@ -30,7 +74,39 @@ exports[`UptimeDots renders without errors 1`] = `
       data-testid="uptimeDot"
     />
     <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
       class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-red-500 rounded"
       data-testid="uptimeDot"
     />
     <div
@@ -42,83 +118,7 @@ exports[`UptimeDots renders without errors 1`] = `
       data-testid="uptimeDot"
     />
     <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
+      class="h-8 flex-grow bg-red-500 rounded"
       data-testid="uptimeDot"
     />
     <div
