@@ -4,6 +4,10 @@ import PropTypes from "prop-types";
 import OutagesOverlay from "../OutagesOverlay";
 import UptimeDots from "../UptimeDots";
 
+export const UptimeMonitorLoading = () => {
+  return <div className="h-8 text-center">Loading...</div>;
+};
+
 const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
   const [overlayOpen, setOverlayOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
@@ -32,36 +36,33 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
     return () => (mounted = false);
   }, [hostname, uptimeMonitor.id]);
 
-  if (loading) {
-    return "Loading";
-  } else {
-    return (
-      <>
-        <div className="px-6 py-5 space-y-3">
-          <div className="sm:flex justify-between">
-            <h2>
-              <button
-                className="c_h-heading focus:outline-none"
-                onClick={() => setOverlayOpen(true)}
-              >
-                {uptimeMonitor.title}
-              </button>
-            </h2>
-            <p className="mt-1 sm:mt-0 text-gray-700">
-              Monitoring from 4 locations
-            </p>
-          </div>
-          <UptimeDots timeseries={monitor.timeseries} />
+  return (
+    <>
+      <div className="px-6 py-5 space-y-3">
+        <div className="sm:flex justify-between">
+          <h2>
+            <button
+              className="c_h-heading focus:outline-none"
+              onClick={() => setOverlayOpen(true)}
+            >
+              {uptimeMonitor.title}
+            </button>
+          </h2>
+          <p className="mt-1 sm:mt-0 text-gray-700">
+            Monitoring from 4 locations
+          </p>
         </div>
+        {loading && <UptimeMonitorLoading />}
+        {!loading && <UptimeDots timeseries={monitor.timeseries} />}
+      </div>
 
-        <OutagesOverlay
-          open={overlayOpen}
-          handleClose={() => setOverlayOpen(false)}
-          outages={[]}
-        />
-      </>
-    );
-  }
+      <OutagesOverlay
+        open={overlayOpen}
+        handleClose={() => setOverlayOpen(false)}
+        outages={[]}
+      />
+    </>
+  );
 };
 
 UptimeMonitor.propTypes = {
