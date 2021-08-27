@@ -10,6 +10,9 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
   const [monitor, setMonitor] = React.useState([]);
 
   React.useEffect(() => {
+    // We use the mounted variable to make sure React stops trying to use state
+    // when the component is unmounted.
+    let mounted = true;
     fetch(
       `https://api.appsignal-status.online/status_pages/${Buffer.from(
         hostname
@@ -20,9 +23,13 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
     )
       .then((res) => res.json())
       .then((result) => {
-        setMonitor(result);
-        setLoading(false);
+        if (mounted) {
+          setMonitor(result);
+          setLoading(false);
+        }
       });
+
+    return () => (mounted = false);
   }, [hostname, uptimeMonitor.id]);
 
   if (loading) {
