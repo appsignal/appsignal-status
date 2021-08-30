@@ -17,9 +17,7 @@ exports[`UptimeMonitor renders without errors 1`] = `
       </h2>
       <p
         class="mt-1 sm:mt-0 text-gray-700"
-      >
-        Monitoring from 4 locations
-      </p>
+      />
     </div>
     <div
       class="h-8 text-center"

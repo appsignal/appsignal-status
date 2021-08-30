@@ -3,6 +3,7 @@
   "title": "blog",
   "url": "https://blog.appsignal.com",
   "description": "",
+  "regions": ["europe", "south-america", "north-america", "asia-pacific"],
   "timeseries": [
     {
       "timestamp": "2021-07-28T17:00:00.000Z",

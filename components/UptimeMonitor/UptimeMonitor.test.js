@@ -1,4 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
+import { rest } from "msw";
+import { server } from "../../mocks/server";
 
 import UptimeMonitor, { UptimeMonitorLoading } from "./UptimeMonitor";
 import statusPageMock from "../../mocks/status_pages/appsignal.json";
@@ -33,6 +35,34 @@ describe("UptimeMonitor", () => {
       expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
       const uptimeDots = screen.getAllByTestId("uptimeDot");
       expect(uptimeDots.length).toEqual(30);
+    });
+  });
+
+  describe("monitoring from X locations message", () => {
+    test("plural message", async () => {
+      build();
+      expect(
+        await screen.findByText("Monitoring from 4 locations")
+      ).toBeInTheDocument();
+    });
+
+    test("singular message", async () => {
+      const monitorWithOneRegion = require("../../mocks/monitors/homepage.json");
+      monitorWithOneRegion.regions = ["europe"];
+      server.use(
+        rest.post(
+          "https://api.appsignal-status.online/status_pages/:statusPageId/monitors/:monitorId.json",
+          (_req, res, ctx) => {
+            return res(ctx.json(monitorWithOneRegion));
+          }
+        )
+      );
+
+      build();
+
+      expect(
+        await screen.findByText("Monitoring from 1 location")
+      ).toBeInTheDocument();
     });
   });
 });
