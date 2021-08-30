@@ -3,6 +3,7 @@
   "title": "homepage",
   "url": "https://www.appsignal.com",
   "description": "The AppSignal homepage. Notify #operations when this alert is triggered. ",
+  "regions": ["europe", "south-america", "north-america", "asia-pacific"],
   "timeseries": [
     {
       "timestamp": "2021-08-06T05:00:00.000Z",
