@@ -9,19 +9,22 @@
       "id": "homepage",
       "title": "homepage",
       "url": "https://www.appsignal.com",
-      "description": "The AppSignal homepage. Notify #operations when this alert is triggered. "
+      "description": "The AppSignal homepage. Notify #operations when this alert is triggered. ",
+      "regions": ["europe", "south-america", "north-america", "asia-pacific"]
     },
     {
       "id": "blog",
       "title": "blog",
       "url": "https://blog.appsignal.com",
-      "description": ""
+      "description": "",
+      "regions": ["europe", "south-america", "north-america", "asia-pacific"]
     },
     {
       "id": "always-down",
       "title": "Always Down",
       "url": "https://banana.appsignal.com",
-      "description": "This endpoint will always be down!"
+      "description": "This endpoint will always be down!",
+      "regions": ["europe", "south-america", "north-america", "asia-pacific"]
     }
   ]
 }

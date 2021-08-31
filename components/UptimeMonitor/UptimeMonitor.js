@@ -49,10 +49,8 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
             </button>
           </h2>
           <p className="mt-1 sm:mt-0 text-gray-700">
-            {!loading &&
-              `Monitoring from ${monitor.regions?.length} ${
-                monitor.regions?.length > 1 ? "locations" : "location"
-              }`}
+            Monitoring from {uptimeMonitor.regions.length}{" "}
+            {uptimeMonitor.regions?.length > 1 ? "locations" : "location"}
           </p>
         </div>
         {loading && <UptimeMonitorLoading />}

@@ -26,7 +26,12 @@ exports[`UptimeMonitors renders without problems 1`] = `
             </h2>
             <p
               class="mt-1 sm:mt-0 text-gray-700"
-            />
+            >
+              Monitoring from 
+              4
+               
+              locations
+            </p>
           </div>
           <div
             class="h-8 text-center"
@@ -49,7 +54,12 @@ exports[`UptimeMonitors renders without problems 1`] = `
             </h2>
             <p
               class="mt-1 sm:mt-0 text-gray-700"
-            />
+            >
+              Monitoring from 
+              4
+               
+              locations
+            </p>
           </div>
           <div
             class="h-8 text-center"
@@ -72,7 +82,12 @@ exports[`UptimeMonitors renders without problems 1`] = `
             </h2>
             <p
               class="mt-1 sm:mt-0 text-gray-700"
-            />
+            >
+              Monitoring from 
+              4
+               
+              locations
+            </p>
           </div>
           <div
             class="h-8 text-center"

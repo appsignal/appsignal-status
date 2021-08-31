@@ -3,7 +3,6 @@
   "title": "Always Down",
   "url": "https://banana.appsignal.com",
   "description": "This endpoint will always be down!",
-  "regions": ["europe", "south-america", "north-america", "asia-pacific"],
   "timeseries": [
     {
       "timestamp": "2021-07-29T00:00:00.000Z",
