@@ -47,6 +47,8 @@ export async function getServerSideProps({ req }) {
     };
   }
 
+  data.hostname = hostname;
+
   return {
     props: { statusPage: data },
   };
