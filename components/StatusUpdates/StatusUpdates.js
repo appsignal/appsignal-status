@@ -15,9 +15,13 @@ const StatusUpdates = ({ updates }) => {
             <p className="text-center">No updates yet</p>
           )}
           {updates.length > 0 &&
-            updates.map((update) => (
-              <StatusUpdate key={update.id} update={update} />
-            ))}
+            updates
+              .slice()
+              .sort((a, b) => new Date(a.time) - new Date(b.time))
+              .reverse()
+              .map((update) => (
+                <StatusUpdate key={update.id} update={update} />
+              ))}
         </div>
       </div>
     </section>

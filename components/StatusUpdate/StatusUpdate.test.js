@@ -21,6 +21,6 @@ describe("StatusUpdate", () => {
     );
     expect(screen.getByText("All Fixed again")).toBeInTheDocument();
     expect(screen.getByText("All good")).toBeInTheDocument();
-    expect(screen.getByText("Sep. 1st")).toBeInTheDocument();
+    expect(screen.getByText("Sep. 1st 8:44")).toBeInTheDocument();
   });
 });

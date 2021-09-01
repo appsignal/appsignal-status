@@ -25,6 +25,20 @@ describe("StatusUpdates", () => {
     ).toBeInTheDocument();
   });
 
+  test("the updates are sorted by time", () => {
+    build();
+
+    const updates = screen.getAllByTestId("statusUpdate");
+
+    expect(updates[0].querySelector("h3").innerHTML).toContain(
+      statusPageMock.updates[1].title
+    );
+
+    expect(updates[1].querySelector("h3").innerHTML).toContain(
+      statusPageMock.updates[0].title
+    );
+  });
+
   test("renders an empty state when there are no updates", () => {
     build({ updates: [] });
 
