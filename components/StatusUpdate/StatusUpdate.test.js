@@ -15,12 +15,12 @@ describe("StatusUpdate", () => {
   });
 
   test("it shows title description and formatted time", () => {
-    build({ update: statusPageMock.updates[1] });
+    build({ update: statusPageMock.updates[0] });
     expect(screen.getByRole("img", { hidden: true }).classList).toContain(
-      "fa-check"
+      "fa-exclamation"
     );
-    expect(screen.getByText("All Fixed again")).toBeInTheDocument();
-    expect(screen.getByText("All good")).toBeInTheDocument();
-    expect(screen.getByText("Sep. 1st 8:44")).toBeInTheDocument();
+    expect(screen.getByText("Some update")).toBeInTheDocument();
+    expect(screen.getByText("Some description")).toBeInTheDocument();
+    expect(screen.getByText("Aug. 30th 8:43")).toBeInTheDocument();
   });
 });
