@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import StatusIcon from "./StatusIcon";
 
 const build = (props = {}) => {
-  return render(<StatusIcon status="success" {...props} />);
+  return render(<StatusIcon status="resolved" {...props} />);
 };
 
 describe("StatusIcon", () => {
@@ -13,17 +13,8 @@ describe("StatusIcon", () => {
   });
 
   describe("different states", () => {
-    test("default", () => {
-      const { container } = build({ status: "default" });
-
-      const icon = screen.getByRole("img", { hidden: true });
-      expect(container).toMatchSnapshot();
-      expect(icon.parentNode.classList).toContain("bg-gray-200");
-      expect(icon.classList).toContain("fa-info");
-    });
-
-    test("success", () => {
-      const { container } = build({ status: "success" });
+    test("resolved", () => {
+      const { container } = build({ status: "resolved" });
 
       const icon = screen.getByRole("img", { hidden: true });
       expect(container).toMatchSnapshot();
@@ -31,8 +22,8 @@ describe("StatusIcon", () => {
       expect(icon.classList).toContain("fa-check");
     });
 
-    test("warning", () => {
-      const { container } = build({ status: "warning" });
+    test("identified", () => {
+      const { container } = build({ status: "identified" });
 
       const icon = screen.getByRole("img", { hidden: true });
       expect(container).toMatchSnapshot();
@@ -40,8 +31,17 @@ describe("StatusIcon", () => {
       expect(icon.classList).toContain("fa-exclamation");
     });
 
-    test("error", () => {
-      const { container } = build({ status: "error" });
+    test("recovering", () => {
+      const { container } = build({ status: "recovering" });
+
+      const icon = screen.getByRole("img", { hidden: true });
+      expect(container).toMatchSnapshot();
+      expect(icon.parentNode.classList).toContain("bg-orange-500");
+      expect(icon.classList).toContain("fa-exclamation");
+    });
+
+    test("investigating", () => {
+      const { container } = build({ status: "investigating" });
 
       const icon = screen.getByRole("img", { hidden: true });
       expect(container).toMatchSnapshot();

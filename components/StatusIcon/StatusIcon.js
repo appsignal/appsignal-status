@@ -1,27 +1,23 @@
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faExclamation,
-  faInfo,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faExclamation } from "@fortawesome/free-solid-svg-icons";
 
 const iconMapping = {
-  success: {
+  resolved: {
     icon: faCheck,
     style: "bg-green-500 text-white",
   },
-  warning: {
+  identified: {
     icon: faExclamation,
     style: "bg-orange-500 text-white",
   },
-  error: {
+  recovering: {
+    icon: faExclamation,
+    style: "bg-orange-500 text-white",
+  },
+  investigating: {
     icon: faExclamation,
     style: "bg-red-500 text-white",
-  },
-  default: {
-    icon: faInfo,
-    style: "bg-gray-200 text-gray-700",
   },
 };
 
