@@ -13,7 +13,7 @@ const App = ({ statusPage }) => {
       <Head>
         <title>{statusPage.title} Status</title>
       </Head>
-      <Header />
+      <Header title={statusPage.title} />
       <main>
         <CurrentStatus state={statusPage.state} />
         <UptimeMonitors statusPage={statusPage} />
