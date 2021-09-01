@@ -1,6 +1,4 @@
 import PropTypes from "prop-types";
-import Link from "next/link";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheck,
@@ -20,7 +18,7 @@ const iconMapping = {
   },
 };
 
-const CurrentStatus = ({ state }) => {
+const CurrentStatus = ({ statusPage: { state, updates } }) => {
   const renderIcon = () => {
     const outerStyle = iconMapping[state].outerStyle;
     const innerStyle = iconMapping[state].innerStyle;
@@ -43,36 +41,29 @@ const CurrentStatus = ({ state }) => {
     );
   };
 
+  const lastUpdateMessage = updates
+    .slice()
+    .sort((a, b) => new Date(a.time) - new Date(b.time))
+    .reverse()[0];
+
   return (
     <section className="mt-16">
       <div className="container text-center">
         {renderIcon()}
         <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl">
-          {state == "up" ? "No known issues" : "We’re experiencing issues"}
+          {state === "up" ? "No known issues" : lastUpdateMessage?.title}
         </h1>
-        <p className="text-gray-700">
-          {state == "up" ? (
-            <>
-              Don{"'"}t agree with this? Please{" "}
-              <a href="mailto:contact@appsignal.com">let us know</a>.
-            </>
-          ) : (
-            <>
-              Last updated at 15th Aug 07:53 CET. Read{" "}
-              <Link href="#status-updates">
-                <a>latest status update</a>
-              </Link>
-              .
-            </>
-          )}
-        </p>
+        <p className="text-gray-700">{lastUpdateMessage?.description}</p>
       </div>
     </section>
   );
 };
 
 CurrentStatus.propTypes = {
-  state: PropTypes.oneOf(["up", "down"]).isRequired,
+  statusPage: PropTypes.shape({
+    state: PropTypes.oneOf(["up", "down"]).isRequired,
+    updates: PropTypes.array,
+  }).isRequired,
 };
 
 export default CurrentStatus;
