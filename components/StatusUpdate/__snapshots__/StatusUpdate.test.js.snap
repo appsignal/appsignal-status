@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatusUpdate renders without errors 1`] = `
+<div>
+  <div
+    class="flex bg-white shadow-sm rounded py-5 px-6"
+    data-testid="statusUpdate"
+  >
+    <div
+      class="mr-4 my-0.5"
+    >
+      <span
+        class="flex items-center justify-center h-4 w-4 rounded-full bg-red-500 text-white"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+          data-icon="exclamation"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style="font-size: 8px;"
+          viewBox="0 0 192 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class=""
+    >
+      <h3
+        class="c_h-heading mb-1"
+      >
+        Some update
+      </h3>
+      <p
+        class="text-gray-700"
+      >
+        Some description
+      </p>
+      <p
+        class="text-gray-600 text-ms mt-2"
+      >
+        Aug. 30th 8:43
+      </p>
+    </div>
+  </div>
+</div>
+`;

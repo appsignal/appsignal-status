@@ -4,6 +4,22 @@
   "title": "AppSignal",
   "description": "The AppSignal status page.. status page",
   "state": "up",
+  "updates": [
+    {
+      "id": "update-one",
+      "title": "Some update",
+      "description": "Some description",
+      "state": "investigating",
+      "time": "2021-08-30T08:43:37.868Z"
+    },
+    {
+      "id": "update-two",
+      "title": "All Fixed again",
+      "description": null,
+      "state": "resolved",
+      "time": "2021-09-01T08:44:28.265Z"
+    }
+  ],
   "uptime_monitors": [
     {
       "id": "homepage",
