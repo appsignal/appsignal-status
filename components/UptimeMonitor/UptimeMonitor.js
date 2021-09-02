@@ -57,11 +57,13 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
         {!loading && <UptimeDots timeseries={monitor.timeseries} />}
       </div>
 
-      <OutagesOverlay
-        open={overlayOpen}
-        handleClose={() => setOverlayOpen(false)}
-        outages={[]}
-      />
+      {!loading && (
+        <OutagesOverlay
+          open={overlayOpen}
+          handleClose={() => setOverlayOpen(false)}
+          timeseries={monitor.timeseries}
+        />
+      )}
     </>
   );
 };

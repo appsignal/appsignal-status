@@ -26,7 +26,7 @@ const App = ({ statusPage }) => {
 
 export async function getServerSideProps({ req }) {
   const { headers } = req;
-  const hostname = headers["cdn-host"] || "status.appsignal-status.online";
+  const hostname = headers["cdn-host"] || "staging.appsignal-status.online";
   const result = await fetch(
     `https://api.appsignal-status.online/status_pages/${Buffer.from(
       hostname

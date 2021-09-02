@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import Overlay from "../Overlay/Overlay";
-import OutagesList from "./OutagesList";
+import Outages from "../Outages";
 
-const OutagesOverlay = ({ outages, open, handleClose }) => {
+const OutagesOverlay = ({ timeseries, open, handleClose }) => {
   return (
     <Overlay open={open}>
       <div className="flex justify-end">
@@ -18,7 +18,7 @@ const OutagesOverlay = ({ outages, open, handleClose }) => {
           </div>
 
           <div className="p-6">
-            <OutagesList outages={outages} />
+            <Outages timeseries={timeseries} />
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ const OutagesOverlay = ({ outages, open, handleClose }) => {
 };
 
 OutagesOverlay.propTypes = {
-  outages: PropTypes.array.isRequired,
+  timeseries: PropTypes.array.isRequired,
   open: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
