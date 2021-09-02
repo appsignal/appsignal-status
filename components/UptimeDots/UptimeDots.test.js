@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import UptimeDots, { sortedTimeseries } from "./UptimeDots";
+import UptimeDots from "./UptimeDots";
 
 import homepageMock from "../../mocks/monitors/homepage.json";
 
