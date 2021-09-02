@@ -4,12 +4,7 @@ import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 dayjs.extend(advancedFormat);
 
-export const formatRegion = (region) => {
-  return region
-    .split(/-| /)
-    .map((region) => region.charAt(0).toUpperCase() + region.slice(1))
-    .join(" ");
-};
+import { formatRegion } from "../../utils";
 
 const state = (timeserieValues) =>
   Object.values(timeserieValues).reduce((a, b) => a + b) > 0 ? "down" : "up";

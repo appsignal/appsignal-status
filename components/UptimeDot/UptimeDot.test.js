@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import UptimeDot, { downtimeSummary, formatRegion } from "./UptimeDot";
+import UptimeDot, { downtimeSummary } from "./UptimeDot";
 
 const up = {
   timestamp: "2021-08-06T22:00:00.000Z",
@@ -52,14 +52,6 @@ describe("UptimeDot", () => {
 
     expect(screen.getByText("Aug. 6th")).toBeInTheDocument();
     expect(screen.getByText("No outage")).toBeInTheDocument();
-  });
-});
-
-describe("#formatRegion", () => {
-  test("returns a capitalized string", () => {
-    expect(formatRegion("europe")).toEqual("Europe");
-    expect(formatRegion("north america")).toEqual("North America");
-    expect(formatRegion("south-america")).toEqual("South America");
   });
 });
 
