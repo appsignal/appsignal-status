@@ -9,13 +9,12 @@ describe("OutageRow", () => {
     );
 
     expect(container.querySelector("p").textContent).toContain(
-      "Down from Europe"
+      "Down from Europe for 12 minutes"
     );
-    expect(screen.getByText("down for 12 minutes")).toBeInTheDocument();
   });
 
   test("renders the downtime as singular if there is one minute", () => {
     render(<Outage outage={{ region: "europe", minutes: 1 }} />);
-    expect(screen.getByText("down for 1 minute")).toBeInTheDocument();
+    expect(screen.getByText(/for 1 minute/)).toBeInTheDocument();
   });
 });

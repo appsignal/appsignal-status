@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Outage from "../Outage";
 
 const OutagesByDay = ({ timeserie }) => {
@@ -14,9 +16,12 @@ const OutagesByDay = ({ timeserie }) => {
             key={region}
           />
         ))}
-      {/* <OutagesBox outages={outagesPerDay[day]} /> */}
     </>
   );
+};
+
+OutagesByDay.propTypes = {
+  timeserie: PropTypes.object.isRequired,
 };
 
 export default OutagesByDay;

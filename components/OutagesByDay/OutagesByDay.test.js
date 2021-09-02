@@ -18,6 +18,6 @@ describe("OutagesByDay", () => {
       />
     );
 
-    expect(screen.getByText("Monday July 29th")).toBeInTheDocument();
+    expect(screen.getByText("7/29/2021")).toBeInTheDocument();
   });
 });

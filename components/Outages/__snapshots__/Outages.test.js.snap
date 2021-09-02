@@ -1,0 +1,846 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Outages renders without errors 1`] = `
+<div>
+  <ul
+    class="space-y-6"
+  >
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/24/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                Europe
+                 
+              </span>
+              for 
+              5
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/21/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/20/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/18/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/16/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                Europe
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/15/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              4
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                North America
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                Europe
+                 
+              </span>
+              for 
+              6
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/13/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/8/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                North America
+                 
+              </span>
+              for 
+              120
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/7/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                North America
+                 
+              </span>
+              for 
+              5
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/6/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                Europe
+                 
+              </span>
+              for 
+              1
+               
+              minute
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        8/5/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                South America
+                 
+              </span>
+              for 
+              10
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <h3
+        class="text-gray-700 mb-4"
+      >
+        7/26/2021
+      </h3>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                Asia Pacific
+                 
+              </span>
+              for 
+              20
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+        data-testid="outage"
+      >
+        <div
+          class="flex justify-between p-4"
+        >
+          <div
+            class="w-full flex items-center space-x-3"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-orange-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+                data-icon="exclamation"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 192 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M176 432c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80zM25.26 25.199l13.6 272C39.499 309.972 50.041 320 62.83 320h66.34c12.789 0 23.331-10.028 23.97-22.801l13.6-272C167.425 11.49 156.496 0 142.77 0H49.23C35.504 0 24.575 11.49 25.26 25.199z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <p>
+              Down from
+              <span
+                class="font-semibold"
+              >
+                 
+                Europe
+                 
+              </span>
+              for 
+              5
+               
+              minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;

@@ -5,7 +5,10 @@ import { formatRegion } from "../../utils";
 
 const Outage = ({ outage: { region, minutes } }) => {
   return (
-    <div className="bg-white shadow-sm rounded divide-y divide-gray-200 my-1">
+    <div
+      className="bg-white shadow-sm rounded divide-y divide-gray-200 my-1"
+      data-testid="outage"
+    >
       <div className="flex justify-between p-4">
         <div className="w-full flex items-center space-x-3">
           <StatusIcon status="identified" />
