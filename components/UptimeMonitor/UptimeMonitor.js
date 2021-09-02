@@ -7,7 +7,7 @@ import UptimeDots from "../UptimeDots";
 export const UptimeMonitorLoading = () => {
   return (
     <div className="flex space-x-1">
-      {[...Array(30)].map((i) => (
+      {[...Array(30)].map((e, i) => (
         <div key={i} className="h-8 flex-grow rounded bg-gray-200" />
       ))}
     </div>
