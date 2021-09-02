@@ -60,7 +60,7 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
       <OutagesOverlay
         open={overlayOpen}
         handleClose={() => setOverlayOpen(false)}
-        outages={[]}
+        timeseries={monitor.timeseries}
       />
     </>
   );
