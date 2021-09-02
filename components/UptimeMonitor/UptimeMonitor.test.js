@@ -23,7 +23,6 @@ describe("UptimeMonitor", () => {
     build();
 
     expect(screen.getByText("homepage")).toBeInTheDocument();
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
   });
 
   test("renders uptime dots when loading is done", async () => {
@@ -31,7 +30,6 @@ describe("UptimeMonitor", () => {
 
     await waitFor(() => {
       expect(screen.getByText("homepage")).toBeInTheDocument();
-      expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
       const uptimeDots = screen.getAllByTestId("uptimeDot");
       expect(uptimeDots.length).toEqual(30);
     });

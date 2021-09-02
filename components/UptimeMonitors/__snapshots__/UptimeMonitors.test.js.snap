@@ -34,9 +34,98 @@ exports[`UptimeMonitors renders without problems 1`] = `
             </p>
           </div>
           <div
-            class="h-8 text-center"
+            class="flex space-x-1"
           >
-            Loading...
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
           </div>
         </div>
         <div
@@ -62,9 +151,98 @@ exports[`UptimeMonitors renders without problems 1`] = `
             </p>
           </div>
           <div
-            class="h-8 text-center"
+            class="flex space-x-1"
           >
-            Loading...
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
           </div>
         </div>
         <div
@@ -90,9 +268,98 @@ exports[`UptimeMonitors renders without problems 1`] = `
             </p>
           </div>
           <div
-            class="h-8 text-center"
+            class="flex space-x-1"
           >
-            Loading...
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
+            <div
+              class="h-8 flex-grow rounded bg-gray-200"
+            />
           </div>
         </div>
       </div>
