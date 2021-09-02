@@ -24,7 +24,11 @@ export const downtimeSummary = (timeserieValues) => {
   });
 };
 
-const UptimeDot = ({ timeserie }) => {
+const UptimeDot = ({ timeserie, loading }) => {
+  if (loading) {
+    return <div className="h-8 flex-grow rounded bg-gray-200" />;
+  }
+
   const uptimeDate = dayjs(timeserie.timestamp).format("MMM. Do");
 
   return (
@@ -51,6 +55,7 @@ UptimeDot.propTypes = {
     timestamp: PropTypes.string.isRequired,
     values: PropTypes.object.isRequired,
   }),
+  loading: PropTypes.bool.isRequired,
 };
 
 export default UptimeDot;

@@ -53,8 +53,7 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
             {uptimeMonitor.regions?.length > 1 ? "locations" : "location"}
           </p>
         </div>
-        {loading && <UptimeMonitorLoading />}
-        {!loading && <UptimeDots timeseries={monitor.timeseries} />}
+        <UptimeDots timeseries={monitor.timeseries} loading={loading} />
       </div>
 
       {!loading && (
