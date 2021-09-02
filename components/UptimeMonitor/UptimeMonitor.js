@@ -5,7 +5,13 @@ import OutagesOverlay from "../OutagesOverlay";
 import UptimeDots from "../UptimeDots";
 
 export const UptimeMonitorLoading = () => {
-  return <div className="h-8 text-center">Loading...</div>;
+  return (
+    <div className="flex space-x-1">
+      {[...Array(30)].map((i) => (
+        <div key={i} className="h-8 flex-grow rounded bg-gray-200" />
+      ))}
+    </div>
+  );
 };
 
 const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
@@ -53,7 +59,8 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
             {uptimeMonitor.regions?.length > 1 ? "locations" : "location"}
           </p>
         </div>
-        <UptimeDots timeseries={monitor.timeseries} loading={loading} />
+        {loading && <UptimeMonitorLoading />}
+        {!loading && <UptimeDots timeseries={monitor.timeseries} />}
       </div>
 
       {!loading && (
