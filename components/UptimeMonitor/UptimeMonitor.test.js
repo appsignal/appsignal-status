@@ -23,7 +23,8 @@ describe("UptimeMonitor", () => {
     build();
 
     expect(screen.getByText("homepage")).toBeInTheDocument();
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+
+    expect(screen.queryAllByTestId("loadingDot").length).toEqual(30);
   });
 
   test("renders uptime dots when loading is done", async () => {
@@ -31,7 +32,10 @@ describe("UptimeMonitor", () => {
 
     await waitFor(() => {
       expect(screen.getByText("homepage")).toBeInTheDocument();
-      expect(screen.queryByText("Loading...")).not.toBeInTheDocument();
+
+      const loadingDots = screen.queryAllByTestId("loadingDot");
+      expect(loadingDots.length).toEqual(0);
+
       const uptimeDots = screen.getAllByTestId("uptimeDot");
       expect(uptimeDots.length).toEqual(30);
     });
@@ -60,6 +64,7 @@ describe("UptimeMonitor", () => {
 describe("UptimeMonitorLoading", () => {
   test("renders a loading message", () => {
     render(<UptimeMonitorLoading />);
-    expect(screen.getByText("Loading...")).toBeInTheDocument();
+    const loadingDots = screen.getAllByTestId("loadingDot");
+    expect(loadingDots.length).toEqual(30);
   });
 });
