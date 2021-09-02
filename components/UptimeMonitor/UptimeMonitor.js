@@ -4,8 +4,24 @@ import PropTypes from "prop-types";
 import OutagesOverlay from "../OutagesOverlay";
 import UptimeDots from "../UptimeDots";
 
+export const LoadingDot = () => {
+  return (
+    <div
+      data-testid="loadingDot"
+      className={`h-8 flex-grow animate-pulse bg-gray-200 rounded`}
+    />
+  );
+};
+
 export const UptimeMonitorLoading = () => {
-  return <div className="h-8 text-center">Loading...</div>;
+  const amountOfDots = 30;
+  return (
+    <div className="flex space-x-1">
+      {[...Array(amountOfDots)].map((_, dotNumber) => {
+        return <LoadingDot key={dotNumber} />;
+      })}
+    </div>
+  );
 };
 
 const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
