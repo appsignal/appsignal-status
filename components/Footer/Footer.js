@@ -10,6 +10,7 @@ const Footer = () => {
             className="flex items-center ml-2"
             href="https://www.appsignal.com/tour/uptime-monitoring"
             target="_blank"
+            rel="noreferrer"
           >
             <Image
               src="/assets/appsignal-logo.svg"
