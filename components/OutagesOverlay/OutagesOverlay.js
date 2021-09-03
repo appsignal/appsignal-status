@@ -9,7 +9,7 @@ const OutagesOverlay = ({ timeseries, open, handleClose }) => {
   return (
     <Overlay open={open}>
       <div className="flex justify-end">
-        <div className="w-full max-w-2xl h-screen bg-gray-100">
+        <div className="flex flex-col w-full max-w-2xl h-screen max-h-screen bg-gray-100">
           <div className="flex justify-between items-center px-6 py-5 border-b border-gray-200">
             <h2 className="c_h-heading">All outages of AppSignal Homepage</h2>
             <button onClick={handleClose} className="focus:outline-none">
@@ -17,7 +17,7 @@ const OutagesOverlay = ({ timeseries, open, handleClose }) => {
             </button>
           </div>
 
-          <div className="p-6">
+          <div className="p-6 self-strech overflow-y-auto">
             <Outages timeseries={timeseries} />
           </div>
         </div>
