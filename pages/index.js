@@ -11,6 +11,21 @@ const App = ({ statusPage }) => {
   return (
     <>
       <Head>
+        <link
+          rel="icon"
+          href="/assets/favicon/favicon.svg"
+          type="image/svg+xml"
+        />
+        <link
+          rel="mask-icon"
+          href="/assets/favicon/favicon.svg"
+          color="#29A575"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/assets/favicon/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/assets/favicon/manifest.webmanifest" />
         <title>{statusPage.title} Status</title>
       </Head>
       <Header title={statusPage.title} />
