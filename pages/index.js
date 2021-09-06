@@ -26,14 +26,10 @@ const App = ({ statusPage }) => {
 
 export async function getServerSideProps({ req }) {
   const { headers } = req;
-  const hostname = headers["cdn-host"] || "staging.appsignal-status.online";
-  console.log("Hostname: ", hostname, process.env.API_ENDPOINT)
-
-  const result = await fetch(
-    `https://api.appsignal-status.online/status_pages/${Buffer.from(
-      hostname
-    ).toString("base64")}.json`
-  );
+  const hostname = headers["cdn-host"] || process.env.DEFAULT_HOSTNAME;
+  const base64Hostname = Buffer.from(hostname).toString("base64");
+  const baseEndpoint = `https://${process.env.API_ENDPOINT}/status_pages/${base64Hostname}`;
+  const result = await fetch(`${baseEndpoint}.json`);
 
   if (!result.ok) {
     return {
@@ -49,8 +45,23 @@ export async function getServerSideProps({ req }) {
     };
   }
 
+  // Inject the endpoint for the metrics into the uptime monitors from
+  // the API request, makes fetching in the front-end easier
+  const { uptime_monitors, ...rest } = data;
+  const uptimeMonitorsWithEndpoint = uptime_monitors.map((uptimeMonitor) => {
+    return {
+      ...uptimeMonitor,
+      endpoint: `${baseEndpoint}/monitors/${uptimeMonitor.id}.json`,
+    };
+  });
+
   return {
-    props: { statusPage: data },
+    props: {
+      statusPage: {
+        ...rest,
+        uptime_monitors: uptimeMonitorsWithEndpoint,
+      },
+    },
   };
 }
 

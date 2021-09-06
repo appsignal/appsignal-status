@@ -6,7 +6,6 @@ import statusPageMock from "../../mocks/status_pages/appsignal.json";
 const build = (props = {}) => {
   return render(
     <UptimeMonitor
-      hostname="example.com"
       uptimeMonitor={statusPageMock.uptime_monitors[0]}
       {...props}
     />
