@@ -16,7 +16,7 @@ exports[`Footer it renders without problems 1`] = `
         </span>
         <a
           class="flex items-center ml-2"
-          href="https://appsignal.com/"
+          href="https://www.appsignal.com/tour/uptime-monitoring"
           rel="noreferrer"
           target="_blank"
         >
