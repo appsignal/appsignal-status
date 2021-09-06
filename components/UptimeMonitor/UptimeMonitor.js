@@ -24,7 +24,7 @@ export const UptimeMonitorLoading = () => {
   );
 };
 
-const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
+const UptimeMonitor = ({ uptimeMonitor }) => {
   const [overlayOpen, setOverlayOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [monitor, setMonitor] = React.useState([]);
@@ -33,14 +33,7 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
     // We use the mounted variable to make sure React stops trying to use state
     // when the component is unmounted.
     let mounted = true;
-    fetch(
-      `https://api.appsignal-status.online/status_pages/${Buffer.from(
-        hostname
-      ).toString("base64")}/monitors/${uptimeMonitor.id}.json`,
-      {
-        mode: "cors",
-      }
-    )
+    fetch(uptimeMonitor.endpoint, { mode: "cors" })
       .then((res) => res.json())
       .then((result) => {
         if (mounted) {
@@ -50,7 +43,7 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
       });
 
     return () => (mounted = false);
-  }, [hostname, uptimeMonitor.id]);
+  }, [uptimeMonitor.id, uptimeMonitor.endpoint]);
 
   return (
     <>
@@ -86,7 +79,6 @@ const UptimeMonitor = ({ hostname, uptimeMonitor }) => {
 
 UptimeMonitor.propTypes = {
   uptimeMonitor: PropTypes.object.isRequired,
-  hostname: PropTypes.string.isRequired,
 };
 
 export default UptimeMonitor;
