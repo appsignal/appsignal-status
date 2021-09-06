@@ -44,13 +44,13 @@ describe("UptimeDot", () => {
     expect(dot.classList).toContain("bg-red-500");
   });
 
-  test("renders a tooltip when hovering", () => {
+  test("renders a tooltip when hovering", async () => {
     const { container } = build({ timeserie: up });
     const dot = container.querySelector("div");
 
     fireEvent.mouseEnter(dot);
 
-    expect(screen.getByText("Aug. 6th")).toBeInTheDocument();
+    expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
     expect(screen.getByText("No outage")).toBeInTheDocument();
   });
 });
