@@ -86,7 +86,7 @@ describe("#timeseriesByDay", () => {
 
 describe("#fillMissingDataPoints", () => {
   test("it fills missing days with empty timeseries", () => {
-    MockDate.set("08-25-2021");
+    MockDate.set("2021-08-25");
 
     const groupedTimeseries = timeseriesByDay(
       homepageMock.timeseries.slice(5, 10)

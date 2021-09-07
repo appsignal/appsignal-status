@@ -6,14 +6,20 @@ dayjs.extend(advancedFormat);
 
 import { formatRegion } from "../../utils";
 
-const state = (timeserieValues) =>
-  Object.values(timeserieValues).reduce((a, b) => a + b) > 0 ? "down" : "up";
+const state = (timeserie) => {
+  if (timeserie.missingDataPoint) return "missing";
+  return Object.values(timeserie.values).reduce((a, b) => a + b) > 0
+    ? "down"
+    : "up";
+};
 
-export const downtimeSummary = (timeserieValues) => {
-  if (state(timeserieValues) === "up") return <p>No outage</p>;
+export const downtimeSummary = (timeserie) => {
+  if (state(timeserie) === "missing")
+    return <p>We are missing datapoints for this hour</p>;
+  if (state(timeserie) === "up") return <p>No outage</p>;
 
-  return Object.keys(timeserieValues).map((region) => {
-    const downtime = timeserieValues[region];
+  return Object.keys(timeserie.values).map((region) => {
+    const downtime = timeserie.values[region];
     if (downtime > 0) {
       return (
         <p key={region}>
@@ -27,21 +33,25 @@ export const downtimeSummary = (timeserieValues) => {
 const UptimeDot = ({ timeserie }) => {
   const uptimeDate = dayjs(timeserie.timestamp).format("MMM. Do");
 
+  const stateColor = {
+    up: "bg-green-500",
+    down: "bg-red-500",
+    missing: "bg-gray-200",
+  };
+
   return (
     <Tippy
       delay={[50, 0]}
       content={
         <div className="text-center text-sm">
           <p className="text-gray-200">{uptimeDate}</p>
-          <div>{downtimeSummary(timeserie.values)}</div>
+          <div>{downtimeSummary(timeserie)}</div>
         </div>
       }
     >
       <div
         data-testid="uptimeDot"
-        className={`h-8 flex-grow ${
-          state(timeserie.values) === "up" ? "bg-green-500" : "bg-red-500"
-        } rounded`}
+        className={`h-8 flex-grow ${stateColor[state(timeserie)]} rounded`}
       />
     </Tippy>
   );

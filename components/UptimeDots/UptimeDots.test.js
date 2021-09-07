@@ -20,4 +20,12 @@ describe("UptimeDots", () => {
     const dots = screen.getAllByTestId("uptimeDot");
     expect(dots.length).toBe(30);
   });
+
+  test("even with missing days we get 30 uptimeDots", () => {
+    const timeseries = homepageMock.timeseries.splice(0, 10);
+    build({ timeseries });
+
+    const dots = screen.getAllByTestId("uptimeDot");
+    expect(dots.length).toBe(30);
+  });
 });
