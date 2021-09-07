@@ -1,10 +1,12 @@
 import OutagesByDay from "../OutagesByDay";
 import { timeseriesByDay } from "../../utils";
 
-const Outages = ({ timeseries }) => {
-  const filteredTimeseries = timeseriesByDay(timeseries).filter((timeserie) => {
-    return Object.values(timeserie.values).reduce((a, b) => a + b, 0) > 0;
-  });
+const Outages = ({ timeseries, regions }) => {
+  const filteredTimeseries = timeseriesByDay(timeseries, regions).filter(
+    (timeserie) => {
+      return Object.values(timeserie.values).reduce((a, b) => a + b, 0) > 0;
+    }
+  );
 
   if (filteredTimeseries.length > 0) {
     return (

@@ -4,10 +4,12 @@ import alwaysDownMock from "../../mocks/monitors/always-down.json";
 
 import Outages from "./Outages";
 
+const regions = ["europe", "asia-pacific", "south-america", "north-america"];
+
 describe("Outages", () => {
   test("renders without errors", () => {
     const { container } = render(
-      <Outages timeseries={homepageMock.timeseries} />
+      <Outages timeseries={homepageMock.timeseries} regions={regions} />
     );
 
     expect(container).toMatchSnapshot();
@@ -15,14 +17,18 @@ describe("Outages", () => {
 
   describe("renders only the timeseries that had an outage", () => {
     test("with a small set of outages", () => {
-      render(<Outages timeseries={homepageMock.timeseries} />);
+      render(
+        <Outages timeseries={homepageMock.timeseries} regions={regions} />
+      );
 
       const outages = screen.getAllByTestId("outage");
       expect(outages.length).toEqual(16);
     });
 
     test("with a full set of outages", () => {
-      render(<Outages timeseries={alwaysDownMock.timeseries} />);
+      render(
+        <Outages timeseries={alwaysDownMock.timeseries} regions={regions} />
+      );
 
       const outages = screen.getAllByTestId("outage");
       expect(outages.length).toEqual(124);

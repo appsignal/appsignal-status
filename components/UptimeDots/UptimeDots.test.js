@@ -2,10 +2,17 @@ import { render, screen } from "@testing-library/react";
 
 import UptimeDots from "./UptimeDots";
 import homepageMock from "../../mocks/monitors/homepage.json";
+import statusPageMock from "../../mocks/status_pages/appsignal.json";
 import { timeseriesByDay } from "../../utils";
 
 const build = (props = {}) => {
-  return render(<UptimeDots timeseries={homepageMock.timeseries} {...props} />);
+  return render(
+    <UptimeDots
+      timeseries={homepageMock.timeseries}
+      regions={statusPageMock.uptime_monitors[0].regions}
+      {...props}
+    />
+  );
 };
 
 describe("UptimeDots", () => {
@@ -30,7 +37,10 @@ describe("UptimeDots", () => {
   });
 
   test("can deal with a timeserie without any values", () => {
-    const timeseries = timeseriesByDay(homepageMock.timeseries);
+    const timeseries = timeseriesByDay(
+      homepageMock.timeseries,
+      statusPageMock.uptime_monitors[0].regions
+    );
     timeseries[0].values = undefined;
 
     expect(() => build({ timeseries })).not.toThrowError();

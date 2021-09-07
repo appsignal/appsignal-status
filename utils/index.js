@@ -9,7 +9,7 @@ export const formatRegion = (region) => {
     .join(" ");
 };
 
-export const timeseriesByDay = (timeseries) => {
+export const timeseriesByDay = (timeseries, expectedRegions) => {
   return sortedTimeseries(timeseries.slice()).reduce((group, timeserie) => {
     const startOfDay = dayjs(timeserie.timestamp).startOf("day").utc().format();
 
@@ -18,6 +18,7 @@ export const timeseriesByDay = (timeseries) => {
     if (!currentGroup) {
       currentGroup = {
         timestamp: startOfDay,
+        missingDataPoint: false,
         values: {},
       };
 
@@ -28,6 +29,10 @@ export const timeseriesByDay = (timeseries) => {
       currentGroup.missingDataPoint = true;
       currentGroup.values = {};
     } else {
+      if (!currentGroup.missingDataPoint)
+        currentGroup.missingDataPoint =
+          Object.keys(timeserie.values).length !== expectedRegions.length;
+
       Object.keys(timeserie.values).map((region) => {
         if (!currentGroup.values[region]) currentGroup.values[region] = 0;
         currentGroup.values[region] += timeserie.values[region];

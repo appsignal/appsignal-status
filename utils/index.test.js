@@ -29,13 +29,16 @@ describe("#sortedTimeseries", () => {
 
 describe("#timeseriesByDay", () => {
   test("it groups the timeseries by day and counts the downtime", () => {
-    const groupedTimeseries = timeseriesByDay(homepageMock.timeseries).slice(
-      0,
-      5
-    );
+    const groupedTimeseries = timeseriesByDay(homepageMock.timeseries, [
+      "europe",
+      "asia-pacific",
+      "south-america",
+      "north-america",
+    ]).slice(0, 5);
 
     expect(groupedTimeseries).toEqual([
       {
+        missingDataPoint: false,
         timestamp: "2021-07-26T00:00:00Z",
         values: {
           "asia-pacific": 20,
@@ -45,6 +48,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-27T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -54,6 +58,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-28T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -63,6 +68,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-29T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -72,6 +78,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-30T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -98,7 +105,8 @@ describe("#fillMissingDataPoints", () => {
     MockDate.set("2021-08-25");
 
     const groupedTimeseries = timeseriesByDay(
-      homepageMock.timeseries.slice(5, 10)
+      homepageMock.timeseries.slice(5, 10),
+      ["europe", "asia-pacific", "south-america", "north-america"]
     );
 
     const withFilledMissingPoints = fillMissingDataPoints(
