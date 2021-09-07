@@ -15,7 +15,7 @@ const state = (timeserie) => {
 
 export const downtimeSummary = (timeserie) => {
   if (state(timeserie) === "missing")
-    return <p>We are missing datapoints for this hour</p>;
+    return <p>We are missing datapoints for this day</p>;
   if (state(timeserie) === "up") return <p>No outage</p>;
 
   return Object.keys(timeserie.values).map((region) => {
