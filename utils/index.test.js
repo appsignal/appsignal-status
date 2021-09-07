@@ -82,6 +82,15 @@ describe("#timeseriesByDay", () => {
       },
     ]);
   });
+
+  test("it deals with a timeserie with timeserie => undefined", () => {
+    const timeseries = homepageMock.timeseries.slice(0, 1);
+    timeseries[0].values = undefined;
+
+    const byDay = timeseriesByDay(timeseries);
+
+    expect(byDay[0].missingDataPoint).toBeTruthy();
+  });
 });
 
 describe("#fillMissingDataPoints", () => {

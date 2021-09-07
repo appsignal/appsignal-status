@@ -24,10 +24,15 @@ export const timeseriesByDay = (timeseries) => {
       group.push(currentGroup);
     }
 
-    Object.keys(timeserie.values).map((region) => {
-      if (!currentGroup.values[region]) currentGroup.values[region] = 0;
-      currentGroup.values[region] += timeserie.values[region];
-    });
+    if (timeserie.values === undefined) {
+      currentGroup.missingDataPoint = true;
+      currentGroup.values = {};
+    } else {
+      Object.keys(timeserie.values).map((region) => {
+        if (!currentGroup.values[region]) currentGroup.values[region] = 0;
+        currentGroup.values[region] += timeserie.values[region];
+      });
+    }
 
     return group;
   }, []);
