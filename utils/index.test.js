@@ -1,4 +1,10 @@
-import { formatRegion, timeseriesByDay, sortedTimeseries } from "./index";
+import MockDate from "mockdate";
+import {
+  formatRegion,
+  timeseriesByDay,
+  sortedTimeseries,
+  fillMissingDataPoints,
+} from "./index";
 import homepageMock from "../mocks/monitors/homepage.json";
 
 describe("#formatRegion", () => {
@@ -75,5 +81,25 @@ describe("#timeseriesByDay", () => {
         },
       },
     ]);
+  });
+});
+
+describe("#fillMissingDataPoints", () => {
+  test("it fills missing days with empty timeseries", () => {
+    MockDate.set("08-25-2021");
+
+    const groupedTimeseries = timeseriesByDay(
+      homepageMock.timeseries.slice(5, 10)
+    );
+
+    const withFilledMissingPoints = fillMissingDataPoints(
+      groupedTimeseries,
+      30
+    );
+
+    expect(withFilledMissingPoints.length).toEqual(30);
+
+    expect(withFilledMissingPoints[0].missingDataPoint).toBeTruthy();
+    expect(withFilledMissingPoints[1].missingDataPoint).toBeFalsy();
   });
 });
