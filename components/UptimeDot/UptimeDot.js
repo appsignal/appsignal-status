@@ -41,7 +41,7 @@ const UptimeDot = ({ timeserie }) => {
 
   return (
     <Tippy
-      delay={[50, 0]}
+      animation={false}
       content={
         <div className="text-center text-sm">
           <p className="text-gray-200">{uptimeDate}</p>
