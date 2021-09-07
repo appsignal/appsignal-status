@@ -74,6 +74,7 @@ const UptimeMonitor = ({ uptimeMonitor }) => {
       {!loading && (
         <OutagesOverlay
           open={overlayOpen}
+          regions={uptimeMonitor.regions}
           handleClose={() => setOverlayOpen(false)}
           timeseries={monitor.timeseries}
         />
