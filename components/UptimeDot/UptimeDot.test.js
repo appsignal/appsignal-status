@@ -57,7 +57,7 @@ describe("UptimeDot", () => {
 
 describe("#downtimeSummary", () => {
   test("returns downtime for different regions", () => {
-    render(downtimeSummary(down.values));
+    render(downtimeSummary(down));
     expect(screen.getByText("Europe down for 60 minutes")).toBeInTheDocument();
     expect(
       screen.getByText("North America down for 60 minutes")
@@ -71,7 +71,7 @@ describe("#downtimeSummary", () => {
   });
 
   test("returns 'no outage' if nothing was down", () => {
-    render(downtimeSummary(up.values));
+    render(downtimeSummary(up));
     expect(screen.getByText("No outage")).toBeInTheDocument();
   });
 });
