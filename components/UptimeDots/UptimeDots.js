@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import UptimeDot from "../UptimeDot";
 import { fillMissingDataPoints, timeseriesByDay } from "../../utils";
 
-const UptimeDots = ({ timeseries }) => {
+const UptimeDots = ({ timeseries, regions }) => {
   const filledTimeseries = fillMissingDataPoints(
-    timeseriesByDay(timeseries).slice(-30, timeseries.length),
+    timeseriesByDay(timeseries, regions).slice(-30, timeseries.length),
     30
   );
 
@@ -20,6 +20,7 @@ const UptimeDots = ({ timeseries }) => {
 
 UptimeDots.propTypes = {
   timeseries: PropTypes.array.isRequired,
+  regions: PropTypes.array.isRequired,
 };
 
 export default UptimeDots;

@@ -63,7 +63,12 @@ const UptimeMonitor = ({ uptimeMonitor }) => {
           </p>
         </div>
         {loading && <UptimeMonitorLoading />}
-        {!loading && <UptimeDots timeseries={monitor.timeseries} />}
+        {!loading && (
+          <UptimeDots
+            timeseries={monitor.timeseries}
+            regions={uptimeMonitor.regions}
+          />
+        )}
       </div>
 
       {!loading && (
