@@ -5,13 +5,7 @@
   "description": "The AppSignal homepage. Notify #operations when this alert is triggered. ",
   "timeseries": [
     {
-      "timestamp": "2021-08-06T05:00:00.000Z",
-      "values": {
-        "asia-pacific": 0,
-        "south-america": 0,
-        "north-america": 0,
-        "europe": 0
-      }
+      "timestamp": "2021-08-06T05:00:00.000Z"
     },
     {
       "timestamp": "2021-08-24T14:00:00.000Z",

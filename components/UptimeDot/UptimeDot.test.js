@@ -44,20 +44,20 @@ describe("UptimeDot", () => {
     expect(dot.classList).toContain("bg-red-500");
   });
 
-  test("renders a tooltip when hovering", () => {
+  test("renders a tooltip when hovering", async () => {
     const { container } = build({ timeserie: up });
     const dot = container.querySelector("div");
 
     fireEvent.mouseEnter(dot);
 
-    expect(screen.getByText("Aug. 6th")).toBeInTheDocument();
+    expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
     expect(screen.getByText("No outage")).toBeInTheDocument();
   });
 });
 
 describe("#downtimeSummary", () => {
   test("returns downtime for different regions", () => {
-    render(downtimeSummary(down.values));
+    render(downtimeSummary(down));
     expect(screen.getByText("Europe down for 60 minutes")).toBeInTheDocument();
     expect(
       screen.getByText("North America down for 60 minutes")
@@ -71,7 +71,7 @@ describe("#downtimeSummary", () => {
   });
 
   test("returns 'no outage' if nothing was down", () => {
-    render(downtimeSummary(up.values));
+    render(downtimeSummary(up));
     expect(screen.getByText("No outage")).toBeInTheDocument();
   });
 });
