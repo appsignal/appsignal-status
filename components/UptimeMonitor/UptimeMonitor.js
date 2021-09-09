@@ -71,6 +71,7 @@ const UptimeMonitor = ({ uptimeMonitor }) => {
           open={overlayOpen}
           handleClose={() => setOverlayOpen(false)}
           timeseries={monitor.timeseries}
+          title={`All outages for ${uptimeMonitor.title}`}
         />
       )}
     </>
