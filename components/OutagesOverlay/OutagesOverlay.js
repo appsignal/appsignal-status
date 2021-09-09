@@ -5,13 +5,13 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Overlay from "../Overlay/Overlay";
 import Outages from "../Outages";
 
-const OutagesOverlay = ({ timeseries, regions, open, handleClose }) => {
+const OutagesOverlay = ({ timeseries, regions, open, handleClose, title }) => {
   return (
     <Overlay open={open}>
       <div className="flex justify-end">
         <div className="flex flex-col w-full max-w-2xl h-screen max-h-screen bg-gray-100">
           <div className="flex justify-between items-center px-6 py-5 border-b border-gray-200">
-            <h2 className="c_h-heading">All outages of AppSignal Homepage</h2>
+            <h2 className="c_h-heading">{title}</h2>
             <button onClick={handleClose} className="focus:outline-none">
               <FontAwesomeIcon icon={faTimes} />
             </button>
@@ -30,6 +30,7 @@ OutagesOverlay.propTypes = {
   timeseries: PropTypes.array.isRequired,
   open: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
   regions: PropTypes.array.isRequired,
 };
 

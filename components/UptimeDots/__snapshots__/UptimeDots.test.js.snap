@@ -14,14 +14,6 @@ exports[`UptimeDots renders without errors 1`] = `
       data-testid="uptimeDot"
     />
     <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
-      class="h-8 flex-grow bg-green-500 rounded"
-      data-testid="uptimeDot"
-    />
-    <div
       class="h-8 flex-grow bg-red-500 rounded"
       data-testid="uptimeDot"
     />
@@ -71,6 +63,14 @@ exports[`UptimeDots renders without errors 1`] = `
     />
     <div
       class="h-8 flex-grow bg-green-500 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-gray-200 rounded"
+      data-testid="uptimeDot"
+    />
+    <div
+      class="h-8 flex-grow bg-gray-200 rounded"
       data-testid="uptimeDot"
     />
     <div
