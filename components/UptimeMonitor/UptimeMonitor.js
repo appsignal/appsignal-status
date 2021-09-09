@@ -63,12 +63,18 @@ const UptimeMonitor = ({ uptimeMonitor }) => {
           </p>
         </div>
         {loading && <UptimeMonitorLoading />}
-        {!loading && <UptimeDots timeseries={monitor.timeseries} />}
+        {!loading && (
+          <UptimeDots
+            timeseries={monitor.timeseries}
+            regions={uptimeMonitor.regions}
+          />
+        )}
       </div>
 
       {!loading && (
         <OutagesOverlay
           open={overlayOpen}
+          regions={uptimeMonitor.regions}
           handleClose={() => setOverlayOpen(false)}
           timeseries={monitor.timeseries}
           title={`All outages for ${uptimeMonitor.title}`}

@@ -1,4 +1,10 @@
-import { formatRegion, timeseriesByDay, sortedTimeseries } from "./index";
+import MockDate from "mockdate";
+import {
+  formatRegion,
+  timeseriesByDay,
+  sortedTimeseries,
+  fillMissingDataPoints,
+} from "./index";
 import homepageMock from "../mocks/monitors/homepage.json";
 
 describe("#formatRegion", () => {
@@ -23,13 +29,16 @@ describe("#sortedTimeseries", () => {
 
 describe("#timeseriesByDay", () => {
   test("it groups the timeseries by day and counts the downtime", () => {
-    const groupedTimeseries = timeseriesByDay(homepageMock.timeseries).slice(
-      0,
-      5
-    );
+    const groupedTimeseries = timeseriesByDay(homepageMock.timeseries, [
+      "europe",
+      "asia-pacific",
+      "south-america",
+      "north-america",
+    ]).slice(0, 5);
 
     expect(groupedTimeseries).toEqual([
       {
+        missingDataPoint: false,
         timestamp: "2021-07-26T00:00:00Z",
         values: {
           "asia-pacific": 20,
@@ -39,6 +48,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-27T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -48,6 +58,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-28T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -57,6 +68,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-29T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -66,6 +78,7 @@ describe("#timeseriesByDay", () => {
         },
       },
       {
+        missingDataPoint: false,
         timestamp: "2021-07-30T00:00:00Z",
         values: {
           "asia-pacific": 0,
@@ -75,5 +88,35 @@ describe("#timeseriesByDay", () => {
         },
       },
     ]);
+  });
+
+  test("it deals with a timeserie with timeserie => undefined", () => {
+    const timeseries = homepageMock.timeseries.slice(0, 1);
+    timeseries[0].values = undefined;
+
+    const byDay = timeseriesByDay(timeseries);
+
+    expect(byDay[0].missingDataPoint).toBeTruthy();
+  });
+});
+
+describe("#fillMissingDataPoints", () => {
+  test("it fills missing days with empty timeseries", () => {
+    MockDate.set("2021-08-25");
+
+    const groupedTimeseries = timeseriesByDay(
+      homepageMock.timeseries.slice(5, 10),
+      ["europe", "asia-pacific", "south-america", "north-america"]
+    );
+
+    const withFilledMissingPoints = fillMissingDataPoints(
+      groupedTimeseries,
+      30
+    );
+
+    expect(withFilledMissingPoints.length).toEqual(30);
+
+    expect(withFilledMissingPoints[0].missingDataPoint).toBeTruthy();
+    expect(withFilledMissingPoints[1].missingDataPoint).toBeFalsy();
   });
 });
