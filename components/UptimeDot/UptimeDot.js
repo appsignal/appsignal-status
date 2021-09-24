@@ -6,21 +6,22 @@ dayjs.extend(advancedFormat);
 
 import { formatRegion } from "../../utils";
 
-const state = (timeserie) => {
+const state = (timeserie, threshold) => {
   if (timeserie.missingDataPoint) return "missing";
-  return Object.values(timeserie.values).reduce((a, b) => a + b) > 0
+  return Object.values(timeserie.values).reduce((a, b) => Math.max(a, b)) >
+    threshold
     ? "down"
     : "up";
 };
 
-export const downtimeSummary = (timeserie) => {
-  if (state(timeserie) === "missing")
+export const downtimeSummary = (timeserie, threshold) => {
+  if (state(timeserie, threshold) === "missing")
     return <p>We are missing datapoints for this day</p>;
   if (state(timeserie) === "up") return <p>No outage</p>;
 
   return Object.keys(timeserie.values).map((region) => {
     const downtime = timeserie.values[region];
-    if (downtime > 0) {
+    if (downtime > threshold) {
       return (
         <p key={region}>
           {formatRegion(region)} down for {downtime} minutes
@@ -45,13 +46,15 @@ const UptimeDot = ({ timeserie, threshold = 5 }) => {
       content={
         <div className="text-center text-sm">
           <p className="text-gray-200">{uptimeDate}</p>
-          <div>{downtimeSummary(timeserie)}</div>
+          <div>{downtimeSummary(timeserie, threshold)}</div>
         </div>
       }
     >
       <div
         data-testid="uptimeDot"
-        className={`h-8 flex-grow ${stateColor[state(timeserie)]} rounded`}
+        className={`h-8 flex-grow ${
+          stateColor[state(timeserie, threshold)]
+        } rounded`}
       />
     </Tippy>
   );
