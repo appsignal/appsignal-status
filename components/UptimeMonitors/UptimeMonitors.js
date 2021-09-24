@@ -12,7 +12,11 @@ const UptimeMonitors = ({ statusPage }) => {
     }
 
     return statusPage.uptime_monitors.map((monitor) => (
-      <UptimeMonitor key={monitor.url} uptimeMonitor={monitor} />
+      <UptimeMonitor
+        key={monitor.url}
+        uptimeMonitor={monitor}
+        threshold={statusPage.threshold}
+      />
     ));
   };
   return (
@@ -29,6 +33,7 @@ const UptimeMonitors = ({ statusPage }) => {
 UptimeMonitors.propTypes = {
   statusPage: PropTypes.shape({
     uptime_monitors: PropTypes.array.isRequired,
+    threshold: PropTypes.number,
   }).isRequired,
 };
 
