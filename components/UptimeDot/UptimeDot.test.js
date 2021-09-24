@@ -38,14 +38,32 @@ describe("UptimeDot", () => {
     expect(dot.classList).toContain("bg-green-500");
   });
 
-  test("dot is red when down", () => {
+  test("dot is red when down and above threshold", () => {
     const { container } = build({ timeserie: down, threshold: 0 });
     const dot = container.querySelector("div");
     expect(dot.classList).toContain("bg-red-500");
   });
 
+  test("dot is green when down and under threshold", () => {
+    const { container } = build({ timeserie: down, threshold: 80 });
+    const dot = container.querySelector("div");
+    expect(dot.classList).toContain("bg-green-500");
+  });
+
   test("renders a tooltip when hovering", async () => {
     const { container } = build({ timeserie: up, threshold: 5 });
+    const dot = container.querySelector("div");
+
+    fireEvent.mouseEnter(dot);
+
+    expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
+    expect(
+      screen.getByText("No downtimes under 5 minutes")
+    ).toBeInTheDocument();
+  });
+
+  test("threshold defaults to 5 when undefined", async () => {
+    const { container } = build({ timeserie: up, threshold: undefined });
     const dot = container.querySelector("div");
 
     fireEvent.mouseEnter(dot);
