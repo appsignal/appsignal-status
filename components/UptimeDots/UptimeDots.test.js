@@ -10,6 +10,7 @@ const build = (props = {}) => {
     <UptimeDots
       timeseries={homepageMock.timeseries}
       regions={statusPageMock.uptime_monitors[0].regions}
+      threshold={statusPageMock.threshold}
       {...props}
     />
   );
