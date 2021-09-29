@@ -33,7 +33,7 @@ const UptimeMonitors = ({ statusPage }) => {
 UptimeMonitors.propTypes = {
   statusPage: PropTypes.shape({
     uptime_monitors: PropTypes.array.isRequired,
-    threshold: PropTypes.number,
+    threshold: PropTypes.number.isRequired,
   }).isRequired,
 };
 
