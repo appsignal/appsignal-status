@@ -24,7 +24,7 @@ export const UptimeMonitorLoading = () => {
   );
 };
 
-const UptimeMonitor = ({ uptimeMonitor }) => {
+const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
   const [overlayOpen, setOverlayOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [monitor, setMonitor] = React.useState([]);
@@ -67,6 +67,7 @@ const UptimeMonitor = ({ uptimeMonitor }) => {
           <UptimeDots
             timeseries={monitor.timeseries}
             regions={uptimeMonitor.regions}
+            threshold={threshold}
           />
         )}
       </div>
@@ -86,6 +87,7 @@ const UptimeMonitor = ({ uptimeMonitor }) => {
 
 UptimeMonitor.propTypes = {
   uptimeMonitor: PropTypes.object.isRequired,
+  threshold: PropTypes.number,
 };
 
 export default UptimeMonitor;

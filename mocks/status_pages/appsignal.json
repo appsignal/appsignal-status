@@ -4,6 +4,7 @@
   "title": "AppSignal",
   "description": "The AppSignal status page.. status page",
   "state": "up",
+  "threshold": 0,
   "updates": [
     {
       "id": "update-one",

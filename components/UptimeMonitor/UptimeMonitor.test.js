@@ -7,6 +7,7 @@ const build = (props = {}) => {
   return render(
     <UptimeMonitor
       uptimeMonitor={statusPageMock.uptime_monitors[0]}
+      threshold={statusPageMock.threshold}
       {...props}
     />
   );
