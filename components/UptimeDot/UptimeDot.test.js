@@ -57,9 +57,7 @@ describe("UptimeDot", () => {
     fireEvent.mouseEnter(dot);
 
     expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
-    expect(
-      screen.getByText("No downtimes under 5 minutes")
-    ).toBeInTheDocument();
+    expect(screen.getByText("No downtimes over 5 minutes")).toBeInTheDocument();
   });
 
   test("threshold defaults to 5 when undefined", async () => {
@@ -69,9 +67,7 @@ describe("UptimeDot", () => {
     fireEvent.mouseEnter(dot);
 
     expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
-    expect(
-      screen.getByText("No downtimes under 5 minutes")
-    ).toBeInTheDocument();
+    expect(screen.getByText("No downtimes over 5 minutes")).toBeInTheDocument();
   });
 });
 
@@ -90,10 +86,10 @@ describe("#downtimeSummary", () => {
     ).toBeInTheDocument();
   });
 
-  test("returns 'no downtimes under N minutes' if nothing was down", () => {
+  test("returns 'No downtimes over N minutes' if nothing was down", () => {
     render(downtimeSummary(up, 10));
     expect(
-      screen.getByText("No downtimes under 10 minutes")
+      screen.getByText("No downtimes over 10 minutes")
     ).toBeInTheDocument();
   });
 });

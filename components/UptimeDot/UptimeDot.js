@@ -18,7 +18,7 @@ export const downtimeSummary = (timeserie, threshold) => {
   if (state(timeserie, threshold) === "missing")
     return <p>We are missing datapoints for this day</p>;
   if (state(timeserie, threshold) === "up")
-    return <p>{`No downtimes under ${threshold} minutes`}</p>;
+    return <p>{`No downtimes over ${threshold} minutes`}</p>;
 
   return Object.keys(timeserie.values).map((region) => {
     const downtime = timeserie.values[region];
