@@ -32,7 +32,7 @@ export const downtimeSummary = (timeserie, threshold) => {
   });
 };
 
-const UptimeDot = ({ timeserie, threshold }) => {
+const UptimeDot = ({ timeserie, threshold = 5 }) => {
   const uptimeDate = dayjs(timeserie.timestamp).format("MMM. Do");
 
   const stateColor = {
@@ -67,10 +67,6 @@ UptimeDot.propTypes = {
     values: PropTypes.object.isRequired,
   }),
   threshold: PropTypes.number,
-};
-
-UptimeDot.defaultProps = {
-  threshold: 5,
 };
 
 export default UptimeDot;
