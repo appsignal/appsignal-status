@@ -69,6 +69,16 @@ describe("UptimeDot", () => {
     expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
     expect(screen.getByText("No downtimes over 5 minutes")).toBeInTheDocument();
   });
+
+  test("threshold defaults to 5 when null", async () => {
+    const { container } = build({ timeserie: up, threshold: null });
+    const dot = container.querySelector("div");
+
+    fireEvent.mouseEnter(dot);
+
+    expect(await screen.findByText("Aug. 6th")).toBeInTheDocument();
+    expect(screen.getByText("No downtimes over 5 minutes")).toBeInTheDocument();
+  });
 });
 
 describe("#downtimeSummary", () => {
