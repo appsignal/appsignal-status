@@ -7,6 +7,7 @@ dayjs.extend(advancedFormat);
 import { formatRegion } from "../../utils";
 
 const DEFAULT_THRESHOLD = 5;
+
 const state = (timeserie, threshold) => {
   if (timeserie.missingDataPoint) return "missing";
   return Object.values(timeserie.values).reduce((a, b) => Math.max(a, b)) >
@@ -16,7 +17,6 @@ const state = (timeserie, threshold) => {
 };
 
 export const downtimeSummary = (timeserie, threshold) => {
-  if (threshold === null) threshold = DEFAULT_THRESHOLD;
   if (state(timeserie, threshold) === "missing")
     return <p>We are missing datapoints for this day</p>;
   if (state(timeserie, threshold) === "up")
@@ -34,7 +34,8 @@ export const downtimeSummary = (timeserie, threshold) => {
   });
 };
 
-const UptimeDot = ({ timeserie, threshold }) => {
+const UptimeDot = ({ timeserie, threshold = DEFAULT_THRESHOLD }) => {
+  if (threshold === null) threshold = DEFAULT_THRESHOLD;
   const uptimeDate = dayjs(timeserie.timestamp).format("MMM. Do");
 
   const stateColor = {
@@ -69,10 +70,6 @@ UptimeDot.propTypes = {
     values: PropTypes.object.isRequired,
   }),
   threshold: PropTypes.number,
-};
-
-UptimeDot.defaultProps = {
-  threshold: DEFAULT_THRESHOLD,
 };
 
 export default UptimeDot;
