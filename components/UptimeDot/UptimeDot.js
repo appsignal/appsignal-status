@@ -6,21 +6,25 @@ dayjs.extend(advancedFormat);
 
 import { formatRegion } from "../../utils";
 
-const state = (timeserie) => {
+const DEFAULT_THRESHOLD = 5;
+
+const state = (timeserie, threshold) => {
   if (timeserie.missingDataPoint) return "missing";
-  return Object.values(timeserie.values).reduce((a, b) => a + b) > 0
+  return Object.values(timeserie.values).reduce((a, b) => Math.max(a, b)) >
+    threshold
     ? "down"
     : "up";
 };
 
-export const downtimeSummary = (timeserie) => {
-  if (state(timeserie) === "missing")
+export const downtimeSummary = (timeserie, threshold) => {
+  if (state(timeserie, threshold) === "missing")
     return <p>We are missing datapoints for this day</p>;
-  if (state(timeserie) === "up") return <p>No outage</p>;
+  if (state(timeserie, threshold) === "up")
+    return <p>{`No downtimes over ${threshold} minutes`}</p>;
 
   return Object.keys(timeserie.values).map((region) => {
     const downtime = timeserie.values[region];
-    if (downtime > 0) {
+    if (downtime > threshold) {
       return (
         <p key={region}>
           {formatRegion(region)} down for {downtime} minutes
@@ -30,7 +34,8 @@ export const downtimeSummary = (timeserie) => {
   });
 };
 
-const UptimeDot = ({ timeserie }) => {
+const UptimeDot = ({ timeserie, threshold = DEFAULT_THRESHOLD }) => {
+  if (threshold === null) threshold = DEFAULT_THRESHOLD;
   const uptimeDate = dayjs(timeserie.timestamp).format("MMM. Do");
 
   const stateColor = {
@@ -45,13 +50,15 @@ const UptimeDot = ({ timeserie }) => {
       content={
         <div className="text-center text-sm">
           <p className="text-gray-200">{uptimeDate}</p>
-          <div>{downtimeSummary(timeserie)}</div>
+          <div>{downtimeSummary(timeserie, threshold)}</div>
         </div>
       }
     >
       <div
         data-testid="uptimeDot"
-        className={`h-8 flex-grow ${stateColor[state(timeserie)]} rounded`}
+        className={`h-8 flex-grow ${
+          stateColor[state(timeserie, threshold)]
+        } rounded`}
       />
     </Tippy>
   );
@@ -62,6 +69,7 @@ UptimeDot.propTypes = {
     timestamp: PropTypes.string.isRequired,
     values: PropTypes.object.isRequired,
   }),
+  threshold: PropTypes.number,
 };
 
 export default UptimeDot;
