@@ -1,10 +1,16 @@
 import OutagesByDay from "../OutagesByDay";
 import { timeseriesByDay } from "../../utils";
 
-const Outages = ({ timeseries, regions }) => {
+const DEFAULT_THRESHOLD = 5;
+
+const Outages = ({ timeseries, regions, threshold }) => {
+  if (threshold === null) threshold = DEFAULT_THRESHOLD;
   const filteredTimeseries = timeseriesByDay(timeseries, regions).filter(
     (timeserie) => {
-      return Object.values(timeserie.values).reduce((a, b) => a + b, 0) > 0;
+      return (
+        Object.values(timeserie.values).reduce((a, b) => Math.max(a, b)) >
+        threshold
+      );
     }
   );
 
@@ -13,7 +19,7 @@ const Outages = ({ timeseries, regions }) => {
       <ul className="space-y-6">
         {filteredTimeseries.reverse().map((timeserie) => (
           <li key={timeserie.timestamp}>
-            <OutagesByDay timeserie={timeserie} />
+            <OutagesByDay timeserie={timeserie} threshold={threshold} />
           </li>
         ))}
       </ul>

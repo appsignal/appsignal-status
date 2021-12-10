@@ -5,7 +5,14 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Overlay from "../Overlay/Overlay";
 import Outages from "../Outages";
 
-const OutagesOverlay = ({ timeseries, regions, open, handleClose, title }) => {
+const OutagesOverlay = ({
+  timeseries,
+  regions,
+  open,
+  handleClose,
+  title,
+  threshold,
+}) => {
   return (
     <Overlay open={open}>
       <div className="flex justify-end">
@@ -18,7 +25,11 @@ const OutagesOverlay = ({ timeseries, regions, open, handleClose, title }) => {
           </div>
 
           <div className="p-6 self-strech overflow-y-auto">
-            <Outages timeseries={timeseries} regions={regions} />
+            <Outages
+              timeseries={timeseries}
+              regions={regions}
+              threshold={threshold}
+            />
           </div>
         </div>
       </div>
@@ -32,6 +43,7 @@ OutagesOverlay.propTypes = {
   handleClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   regions: PropTypes.array.isRequired,
+  threshold: PropTypes.number,
 };
 
 export default OutagesOverlay;
