@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@appsignal/design-system@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/@appsignal/design-system/-/design-system-9.1.0.tgz#ebd3e3c3b0bd1cb0823934ef6ecf4974df891b6e"
-  integrity sha512-GdIUGHUFRspakuxcyX90kvMg+D9kNxy6ocxQ7+rmCh1TRmX0nLpSEBmGgfszuYk76hcJDXSM49W62Xi9nFhW2A==
+"@appsignal/design-system@^9.2.0":
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@appsignal/design-system/-/design-system-9.2.0.tgz#8f5ed2ebcce0fb75146511344866f2dbca8ea677"
+  integrity sha512-jksxI0ok9fxe/WM1mEMk8WwM4PxOa6o1u8Dyzi2bQSO1GW9vyCaosgC+fOAK2GNGVkuVeumW2ijxxNfX/C8KeQ==
   dependencies:
     "@tailwindcss/typography" "^0.4.0"
     "@tippyjs/react" "^4.0.0"
