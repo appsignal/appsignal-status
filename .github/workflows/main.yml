@@ -5,6 +5,7 @@ name: CI
 jobs:
   linting:
     runs-on: ubuntu-latest
+    environment: CI
     steps:
     - uses: actions/checkout@v2
     - name: Get yarn cache directory path
@@ -18,11 +19,15 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Install dependencies
-      run: yarn install
+      run: |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+        yarn install
     - name: Run ESLint
       run: yarn lint
-  formatting:  
+  formatting:
     runs-on: ubuntu-latest
+    environment: CI
     steps:
     - uses: actions/checkout@v2
     - name: Get yarn cache directory path
@@ -36,12 +41,16 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Install dependencies
-      run: yarn install
+      run: |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+        yarn install
     - name: Run Format check
       run: yarn format:check
 
-  tests:  
+  tests:
     runs-on: ubuntu-latest
+    environment: CI
     steps:
     - uses: actions/checkout@v2
     - name: Get yarn cache directory path
@@ -55,6 +64,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Install dependencies
-      run: yarn install
+      run: |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+        yarn install
     - name: Run jest
       run: yarn test
