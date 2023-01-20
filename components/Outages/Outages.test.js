@@ -9,7 +9,11 @@ const regions = ["europe", "asia-pacific", "south-america", "north-america"];
 describe("Outages", () => {
   test("renders without errors", () => {
     const { container } = render(
-      <Outages timeseries={homepageMock.timeseries} regions={regions} />
+      <Outages
+        timeseries={homepageMock.timeseries}
+        regions={regions}
+        threshold={0}
+      />
     );
 
     expect(container).toMatchSnapshot();
@@ -18,7 +22,11 @@ describe("Outages", () => {
   describe("renders only the timeseries that had an outage", () => {
     test("with a small set of outages", () => {
       render(
-        <Outages timeseries={homepageMock.timeseries} regions={regions} />
+        <Outages
+          timeseries={homepageMock.timeseries}
+          regions={regions}
+          threshold={0}
+        />
       );
 
       const outages = screen.getAllByTestId("outage");
@@ -27,7 +35,11 @@ describe("Outages", () => {
 
     test("with a full set of outages", () => {
       render(
-        <Outages timeseries={alwaysDownMock.timeseries} regions={regions} />
+        <Outages
+          timeseries={alwaysDownMock.timeseries}
+          regions={regions}
+          threshold={0}
+        />
       );
 
       const outages = screen.getAllByTestId("outage");

@@ -79,6 +79,7 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
           handleClose={() => setOverlayOpen(false)}
           timeseries={monitor.timeseries}
           title={`All outages for ${uptimeMonitor.title}`}
+          threshold={threshold}
         />
       )}
     </>
