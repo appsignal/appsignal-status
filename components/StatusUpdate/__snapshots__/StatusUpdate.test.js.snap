@@ -46,7 +46,7 @@ exports[`StatusUpdate renders without errors 1`] = `
       <p
         class="text-gray-600 text-ms mt-2"
       >
-        Aug. 30th 8:43
+        Aug. 30th 08:43
       </p>
     </div>
   </div>

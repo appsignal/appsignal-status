@@ -20,7 +20,7 @@ const StatusUpdate = ({ update }) => {
           <p className="text-gray-700">{update.description}</p>
         )}
         <p className="text-gray-600 text-ms mt-2">
-          {dayjs(update.time).format("MMM. Do H:m")}
+          {dayjs(update.time).format("MMM. Do HH:mm")}
         </p>
       </div>
     </div>
