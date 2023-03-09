@@ -48,6 +48,12 @@ export async function getServerSideProps({ req }) {
   // Inject the endpoint for the metrics into the uptime monitors from
   // the API request, makes fetching in the front-end easier
   const { uptime_monitors, ...rest } = data;
+
+  // Display uptime monitors in alphabetical order
+  uptime_monitors.sort((a, b) => {
+    return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
+  });
+
   const uptimeMonitorsWithEndpoint = uptime_monitors.map((uptimeMonitor) => {
     return {
       ...uptimeMonitor,
