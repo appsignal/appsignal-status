@@ -40,4 +40,24 @@ describe("UptimeMonitors", () => {
       expect(screen.getByText("Always Down")).toBeInTheDocument();
     });
   });
+
+  test("should render uptime monitors sorted by title", () => {
+    const statusPage = Object.assign({}, statusPageMock);
+
+    build({ statusPage });
+
+    const updates = screen.getAllByTestId("UptimeMonitor");
+
+    expect(updates[0].querySelector("h2").innerHTML).toContain(
+      statusPageMock.uptime_monitors[0].title
+    );
+
+    expect(updates[1].querySelector("h2").innerHTML).toContain(
+      statusPageMock.uptime_monitors[1].title
+    );
+
+    expect(updates[2].querySelector("h2").innerHTML).toContain(
+      statusPageMock.uptime_monitors[2].title
+    );
+  });
 });

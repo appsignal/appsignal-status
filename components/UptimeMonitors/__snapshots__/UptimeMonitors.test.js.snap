@@ -13,6 +13,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
       >
         <div
           class="px-6 py-5 space-y-3"
+          data-testid="UptimeMonitor"
         >
           <div
             class="sm:flex justify-between"
@@ -21,7 +22,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
               <button
                 class="c_h-heading focus:outline-none"
               >
-                homepage
+                Always Down
               </button>
             </h2>
             <p
@@ -160,6 +161,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
         </div>
         <div
           class="px-6 py-5 space-y-3"
+          data-testid="UptimeMonitor"
         >
           <div
             class="sm:flex justify-between"
@@ -307,6 +309,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
         </div>
         <div
           class="px-6 py-5 space-y-3"
+          data-testid="UptimeMonitor"
         >
           <div
             class="sm:flex justify-between"
@@ -315,7 +318,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
               <button
                 class="c_h-heading focus:outline-none"
               >
-                Always Down
+                homepage
               </button>
             </h2>
             <p

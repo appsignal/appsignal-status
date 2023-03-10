@@ -47,7 +47,7 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
 
   return (
     <>
-      <div className="px-6 py-5 space-y-3">
+      <div className="px-6 py-5 space-y-3" data-testid="UptimeMonitor">
         <div className="sm:flex justify-between">
           <h2>
             <button
