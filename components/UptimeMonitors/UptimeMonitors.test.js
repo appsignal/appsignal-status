@@ -44,7 +44,7 @@ describe("UptimeMonitors", () => {
   });
 
   test("should render uptime monitors sorted by title", () => {
-    const statusPage = {...statusPageMock};
+    const statusPage = { ...statusPageMock };
 
     statusPage.uptime_monitors = multipleMonitorsMock.uptime_monitors;
 
