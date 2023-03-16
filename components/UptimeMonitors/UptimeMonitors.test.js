@@ -42,7 +42,7 @@ describe("UptimeMonitors", () => {
   });
 
   test("should render uptime monitors sorted by title", () => {
-    const statusPage = Object.assign({}, statusPageMock);
+    const statusPage = {...statusPageMock};
 
     build({ statusPage });
 
