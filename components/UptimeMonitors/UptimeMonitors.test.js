@@ -4,6 +4,8 @@ import UptimeMonitors from "./UptimeMonitors";
 
 import statusPageMock from "../../mocks/status_pages/appsignal.json";
 
+import multipleMonitorsMock from "../../mocks/monitors/multiple.json";
+
 const build = (props = {}) => {
   return render(<UptimeMonitors statusPage={statusPageMock} {...props} />);
 };
@@ -44,20 +46,14 @@ describe("UptimeMonitors", () => {
   test("should render uptime monitors sorted by title", () => {
     const statusPage = {...statusPageMock};
 
+    statusPage.uptime_monitors = multipleMonitorsMock.uptime_monitors;
+
     build({ statusPage });
 
     const updates = screen.getAllByTestId("UptimeMonitor");
 
-    expect(updates[0].querySelector("h2").innerHTML).toContain(
-      statusPageMock.uptime_monitors[0].title
-    );
-
-    expect(updates[1].querySelector("h2").innerHTML).toContain(
-      statusPageMock.uptime_monitors[1].title
-    );
-
-    expect(updates[2].querySelector("h2").innerHTML).toContain(
-      statusPageMock.uptime_monitors[2].title
-    );
+    expect(updates[0].querySelector("h2").innerHTML).toContain("Always Down");
+    expect(updates[1].querySelector("h2").innerHTML).toContain("blog");
+    expect(updates[2].querySelector("h2").innerHTML).toContain("homepage");
   });
 });

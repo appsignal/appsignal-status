@@ -3,9 +3,7 @@ import UptimeMonitor from "../UptimeMonitor";
 
 const UptimeMonitors = ({ statusPage }) => {
   // Display uptime monitors in alphabetical order
-  statusPage.uptime_monitors.sort((a, b) => {
-    return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
-  });
+  statusPage.uptime_monitors.sort((a, b) => a.title.localeCompare(b.title));
 
   const renderUptimeMonitors = () => {
     if (statusPage.uptime_monitors.length === 0) {
