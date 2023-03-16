@@ -6,18 +6,15 @@
       "url": "https://blog.appsignal.com",
       "description": "",
       "regions": ["europe", "south-america", "north-america", "asia-pacific"],
-      "endpoint":
-      "https://api.appsignal-status.online/status_pages/1/monitors/blog.json"
+      "endpoint": "https://api.appsignal-status.online/status_pages/1/monitors/blog.json"
     },
     {
       "id": "homepage",
       "title": "homepage",
       "url": "https://www.appsignal.com",
-      "description":
-      "The AppSignal homepage. Notify #operations when this alert is triggered. ",
+      "description": "The AppSignal homepage. Notify #operations when this alert is triggered. ",
       "regions": ["europe", "south-america", "north-america", "asia-pacific"],
-      "endpoint":
-      "https://api.appsignal-status.online/status_pages/1/monitors/homepage.json"
+      "endpoint": "https://api.appsignal-status.online/status_pages/1/monitors/homepage.json"
     },
     {
       "id": "always-down",
@@ -25,8 +22,7 @@
       "url": "https://banana.appsignal.com",
       "description": "This endpoint will always be down!",
       "regions": ["europe", "south-america", "north-america", "asia-pacific"],
-      "endpoint":
-      "https://api.appsignal-status.online/status_pages/1/monitors/always-down.json"
+      "endpoint": "https://api.appsignal-status.online/status_pages/1/monitors/always-down.json"
     }
   ]
 }
