@@ -2,6 +2,9 @@ import PropTypes from "prop-types";
 import UptimeMonitor from "../UptimeMonitor";
 
 const UptimeMonitors = ({ statusPage }) => {
+  // Display uptime monitors in alphabetical order
+  statusPage.uptime_monitors.sort((a, b) => a.title.localeCompare(b.title));
+
   const renderUptimeMonitors = () => {
     if (statusPage.uptime_monitors.length === 0) {
       return (
