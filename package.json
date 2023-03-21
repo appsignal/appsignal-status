@@ -48,7 +48,7 @@
     "jest": "^27.0.6",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.5"
   },
   "msw": {
     "workerDirectory": "public"
