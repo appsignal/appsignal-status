@@ -23,4 +23,12 @@ describe("StatusUpdate", () => {
     expect(screen.getByText("Some description")).toBeInTheDocument();
     expect(screen.getByText("Aug. 30th 08:43")).toBeInTheDocument();
   });
+
+  test("it renders markdown", () => {
+    build({ update: statusPageMock.updates[2] });
+
+    const status = screen.getAllByTestId("StatusMarkdownDescription");
+    expect(status[0].innerHTML).toContain("<h1>");
+    expect(status[0].innerHTML).toContain("<a href");
+  });
 });

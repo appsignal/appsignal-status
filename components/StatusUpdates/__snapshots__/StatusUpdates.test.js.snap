@@ -103,6 +103,7 @@ exports[`StatusUpdates it renders without errors 1`] = `
             </h3>
             <div
               class="text-gray-700"
+              data-testid="StatusMarkdownDescription"
             >
               <p>
                 Some description
@@ -112,6 +113,63 @@ exports[`StatusUpdates it renders without errors 1`] = `
               class="text-gray-600 text-ms mt-2"
             >
               Aug. 30th 08:43
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex bg-white shadow-sm rounded py-5 px-6"
+          data-testid="statusUpdate"
+        >
+          <div
+            class="mr-4 my-0.5"
+          >
+            <span
+              class="flex items-center justify-center h-4 w-4 rounded-full bg-green-500 text-white"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-check fa-w-16 fa-fw "
+                data-icon="check"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style="font-size: 8px;"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+          <div
+            class=""
+          >
+            <h3
+              class="c_h-heading mb-1"
+            >
+              Update with markdown
+            </h3>
+            <div
+              class="text-gray-700"
+              data-testid="StatusMarkdownDescription"
+            >
+              <h1>
+                This is heading This is a 
+                <a
+                  href="https://example.com"
+                >
+                  link
+                </a>
+                .
+              </h1>
+            </div>
+            <p
+              class="text-gray-600 text-ms mt-2"
+            >
+              Sep. 1st 08:44
             </p>
           </div>
         </div>

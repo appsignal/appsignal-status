@@ -46,4 +46,26 @@ describe("CurrentStatus", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("We are printing new paper")).toBeInTheDocument();
   });
+
+  test("it renders markdown", () => {
+    const { container } = build({
+      statusPage: {
+        state: "down",
+        updates: [
+          {
+            title: "Problems with the paper stock",
+            description:
+              "# This is heading This is a [link](https://example.com). ",
+            time: new Date("2021-09-01 12:00"),
+          },
+        ],
+      },
+    });
+    expect(container).toMatchSnapshot();
+
+    const status = screen.getAllByTestId("CurrentStatusMarkdownDescription");
+
+    expect(status[0].innerHTML).toContain("<h1>");
+    expect(status[0].innerHTML).toContain("<a href");
+  });
 });

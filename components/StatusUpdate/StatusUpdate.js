@@ -18,7 +18,10 @@ const StatusUpdate = ({ update }) => {
       <div className="">
         <h3 className="c_h-heading mb-1">{update.title}</h3>
         {update.description && (
-          <div className="text-gray-700">
+          <div
+            className="text-gray-700"
+            data-testid="StatusMarkdownDescription"
+          >
             <ReactMarkdown>{update.description}</ReactMarkdown>
           </div>
         )}

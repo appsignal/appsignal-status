@@ -40,6 +40,7 @@ exports[`StatusUpdate renders without errors 1`] = `
       </h3>
       <div
         class="text-gray-700"
+        data-testid="StatusMarkdownDescription"
       >
         <p>
           Some description

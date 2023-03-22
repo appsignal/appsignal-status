@@ -19,6 +19,13 @@
       "description": null,
       "state": "resolved",
       "time": "2021-09-01T08:44:28.265Z"
+    },
+    {
+      "id": "update-three",
+      "title": "Update with markdown",
+      "description": "# This is heading This is a [link](https://example.com). ",
+      "state": "resolved",
+      "time": "2020-09-01T08:44:28.265Z"
     }
   ],
   "uptime_monitors": [
