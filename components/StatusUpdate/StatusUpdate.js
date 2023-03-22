@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import ReactMarkdown from "react-markdown";
 dayjs.extend(advancedFormat);
 
 import StatusIcon from "../StatusIcon/StatusIcon";
@@ -17,7 +18,9 @@ const StatusUpdate = ({ update }) => {
       <div className="">
         <h3 className="c_h-heading mb-1">{update.title}</h3>
         {update.description && (
-          <p className="text-gray-700">{update.description}</p>
+          <div className="text-gray-700">
+            <ReactMarkdown>{update.description}</ReactMarkdown>
+          </div>
         )}
         <p className="text-gray-600 text-ms mt-2">
           {dayjs(update.time).format("MMM. Do HH:mm")}
