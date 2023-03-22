@@ -101,11 +101,13 @@ exports[`StatusUpdates it renders without errors 1`] = `
             >
               Some update
             </h3>
-            <p
+            <div
               class="text-gray-700"
             >
-              Some description
-            </p>
+              <p>
+                Some description
+              </p>
+            </div>
             <p
               class="text-gray-600 text-ms mt-2"
             >
