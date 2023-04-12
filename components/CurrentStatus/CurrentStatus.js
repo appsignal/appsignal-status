@@ -4,6 +4,7 @@ import {
   faCheck,
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
+import ReactMarkdown from "react-markdown";
 
 const iconMapping = {
   up: {
@@ -48,12 +49,19 @@ const CurrentStatus = ({ statusPage: { state, updates } }) => {
 
   return (
     <section className="mt-16">
-      <div className="container text-center">
+      <div className="container">
         {renderIcon()}
-        <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl">
+        <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl text-center">
           {state === "up" ? "No known issues" : lastUpdateMessage?.title}
         </h1>
-        <p className="text-gray-700">{lastUpdateMessage?.description}</p>
+        {lastUpdateMessage?.description && (
+          <div
+            className="text-gray-700 bg-white shadow-sm rounded py-5 px-6"
+            data-testid="CurrentStatusMarkdownDescription"
+          >
+            <ReactMarkdown>{lastUpdateMessage?.description}</ReactMarkdown>
+          </div>
+        )}
       </div>
     </section>
   );
