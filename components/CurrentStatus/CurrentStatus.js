@@ -54,7 +54,7 @@ const CurrentStatus = ({ statusPage: { state, updates } }) => {
         <h1 className="mt-4 mb-3 c_h-heading c_h-heading--3xl sm:c_h-heading--4xl text-center">
           {state === "up" ? "No known issues" : lastUpdateMessage?.title}
         </h1>
-        {lastUpdateMessage.description && (
+        {lastUpdateMessage?.description && (
           <div
             className="text-gray-700 bg-white shadow-sm rounded py-5 px-6"
             data-testid="CurrentStatusMarkdownDescription"

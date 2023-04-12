@@ -28,7 +28,7 @@ export async function getServerSideProps({ req }) {
   const { headers } = req;
   const hostname = headers["cdn-host"] || process.env.DEFAULT_HOSTNAME;
   const base64Hostname = Buffer.from(hostname).toString("base64");
-  const baseEndpoint = `https://${process.env.API_ENDPOINT}/status_pages/${base64Hostname}`;
+  const baseEndpoint = `http://${process.env.API_ENDPOINT}/status_pages/${base64Hostname}`;
   const result = await fetch(`${baseEndpoint}.json`);
 
   if (!result.ok) {
