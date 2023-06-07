@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
         yarn install
     - name: Run ESLint
       run: yarn lint
@@ -43,7 +43,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
         yarn install
     - name: Run Format check
       run: yarn format:check
@@ -66,7 +66,7 @@ jobs:
     - name: Install dependencies
       run: |
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
+        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
         yarn install
     - name: Run jest
       run: yarn test
