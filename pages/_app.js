@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "@appsignal/design-system";
+import "./main.css";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
   require("../mocks");
