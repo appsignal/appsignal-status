@@ -22,6 +22,7 @@ jobs:
       run: |
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/
         npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
+        cat .npmrc
         yarn install
     - name: Run ESLint
       run: yarn lint
