@@ -4,6 +4,7 @@ exports[`UptimeMonitor renders without errors 1`] = `
 <div>
   <div
     class="px-6 py-5 space-y-3"
+    data-testid="UptimeMonitor"
   >
     <div
       class="sm:flex justify-between"
