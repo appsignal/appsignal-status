@@ -45,6 +45,7 @@ jobs:
       run: |
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/
         npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
+        rm .npmrc
         yarn install
     - name: Run Format check
       run: yarn format:check
@@ -68,6 +69,7 @@ jobs:
       run: |
         npm config set "@fortawesome:registry" https://npm.fontawesome.com/
         npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
+        rm .npmrc
         yarn install
     - name: Run jest
       run: yarn test
