@@ -21,7 +21,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@tippyjs/react": "^4.2.5",
     "autoprefixer": "^10.4.14",
-    "dayjs": "^1.10.6",
+    "dayjs": "^1.11.9",
     "mockdate": "^3.0.5",
     "msw": "^0.35.0",
     "next": "11.1.1",
