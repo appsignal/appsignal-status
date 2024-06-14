@@ -4,6 +4,7 @@ import {
   timeseriesByDay,
   sortedTimeseries,
   fillMissingDataPoints,
+  roundDecimal
 } from "./index";
 import homepageMock from "../mocks/monitors/homepage.json";
 
@@ -120,3 +121,21 @@ describe("#fillMissingDataPoints", () => {
     expect(withFilledMissingPoints[1].missingDataPoint).toBeFalsy();
   });
 });
+
+describe("#roundDecimal", () => {
+  it("returns a round number if round number is given", () => {
+    expect(roundDecimal(100)).toEqual(100)
+    expect(roundDecimal(50)).toEqual(50)
+  })
+
+  it("rounds a number with two decimals", () => {
+    expect(roundDecimal(100.12)).toEqual(100.12)
+    expect(roundDecimal(50.34)).toEqual(50.34)
+  })
+
+  it("rounds number with more decimals", () => {
+    expect(roundDecimal(100.122342342344234)).toEqual(100.12)
+    expect(roundDecimal(50.3499999)).toEqual(50.35)
+    expect(roundDecimal(99.9075)).toEqual(99.90)
+  })
+})
