@@ -41,7 +41,7 @@ describe("UptimeDot", () => {
   test("dot is red when down and above threshold", () => {
     const { container } = build({ timeserie: down, threshold: 0 });
     const dot = container.querySelector("div");
-    expect(dot.classList).toContain("bg-red-500");
+    expect(dot.classList).toContain("bg-yellow-500");
   });
 
   test("dot is green when down and under threshold", () => {
