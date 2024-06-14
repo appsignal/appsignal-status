@@ -10,10 +10,12 @@ const DEFAULT_THRESHOLD = 5;
 
 const state = (timeserie, threshold) => {
   if (timeserie.missingDataPoint) return "missing";
-  const maxDowntime = Object.values(timeserie.values).reduce((a, b) => Math.max(a, b))
-  if (maxDowntime === 1440) return "down"
+  const maxDowntime = Object.values(timeserie.values).reduce((a, b) =>
+    Math.max(a, b)
+  );
+  if (maxDowntime === 1440) return "down";
   if (maxDowntime > threshold) return "partial";
-  return "up"
+  return "up";
 };
 
 export const downtimeSummary = (timeserie, threshold) => {
@@ -57,8 +59,9 @@ const UptimeDot = ({ timeserie, threshold = DEFAULT_THRESHOLD }) => {
     >
       <div
         data-testid="uptimeDot"
-        className={`h-8 flex-grow ${stateColor[state(timeserie, threshold)]
-          } rounded`}
+        className={`h-8 flex-grow ${
+          stateColor[state(timeserie, threshold)]
+        } rounded`}
       />
     </Tippy>
   );

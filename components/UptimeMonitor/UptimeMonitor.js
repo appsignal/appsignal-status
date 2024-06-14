@@ -6,7 +6,10 @@ import Tippy from "@tippyjs/react";
 import OutagesOverlay from "../OutagesOverlay";
 import UptimeDots from "../UptimeDots";
 
-import { timeseriesByDay as groupTimeseriesByDay, roundDecimal } from "../../utils";
+import {
+  timeseriesByDay as groupTimeseriesByDay,
+  roundDecimal,
+} from "../../utils";
 
 export const LoadingDot = () => {
   return (
@@ -29,32 +32,43 @@ export const UptimeMonitorLoading = () => {
 };
 
 export const calculateUptime = (timeseries, regions) => {
-  const timeseriesByDay = groupTimeseriesByDay(timeseries, regions)
-  const timeSeriesLast30Days = timeseriesByDay.slice(-30, (timeseriesByDay.length - 1)).filter((item) => item.missingDataPoint === false);
-  const minutesPerDay = 1_440.00;
+  const timeseriesByDay = groupTimeseriesByDay(timeseries, regions);
+  const timeSeriesLast30Days = timeseriesByDay
+    .slice(-30, timeseriesByDay.length - 1)
+    .filter((item) => item.missingDataPoint === false);
+  const minutesPerDay = 1440.0;
 
-  const downtimePerRegion = []
+  const downtimePerRegion = [];
 
   regions.map((region) => {
     const downtimeInMinutes = timeSeriesLast30Days.reduce((acc, item) => {
       return acc + item.values[region];
-    }, 0)
+    }, 0);
 
-    const uptimePercentage = 100 - roundDecimal((100.00 / (minutesPerDay * timeSeriesLast30Days.length) * downtimeInMinutes))
+    const uptimePercentage =
+      100 -
+      roundDecimal(
+        (100.0 / (minutesPerDay * timeSeriesLast30Days.length)) *
+          downtimeInMinutes
+      );
 
-    downtimePerRegion.push({ region: region, minutes: downtimeInMinutes, percentage: uptimePercentage })
-  })
+    downtimePerRegion.push({
+      region: region,
+      minutes: downtimeInMinutes,
+      percentage: uptimePercentage,
+    });
+  });
 
-  return downtimePerRegion
-}
+  return downtimePerRegion;
+};
 
 export const averageDowntimeOverRegions = (downtimePerRegion) => {
-  const average = Object.values(downtimePerRegion).reduce((acc, item) => {
-    return acc += item.percentage
-  }, 0) / Object.keys(downtimePerRegion).length
-  console.log(average)
-  return roundDecimal(average).toFixed(2)
-}
+  const average =
+    Object.values(downtimePerRegion).reduce((acc, item) => {
+      return (acc += item.percentage);
+    }, 0) / Object.keys(downtimePerRegion).length;
+  return roundDecimal(average).toFixed(2);
+};
 
 const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
   const [overlayOpen, setOverlayOpen] = React.useState(false);
@@ -77,7 +91,10 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
     return () => (mounted = false);
   }, [uptimeMonitor.id, uptimeMonitor.endpoint]);
 
-  const calculatedUptime = calculateUptime(monitor.timeseries, uptimeMonitor.regions)
+  const calculatedUptime = calculateUptime(
+    monitor.timeseries,
+    uptimeMonitor.regions
+  );
 
   return (
     <>
@@ -89,18 +106,20 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
               onClick={() => setOverlayOpen(true)}
             >
               {uptimeMonitor.title}&nbsp;
-
-              {!loading &&
-                (
-                  <Tippy animation={false} content={(
-                    calculatedUptime.map((region) => (
-                      <div key={region.minutes}>{region.percentage}% in {region.region}</div>
-                    ))
-                  )}>
-                    <span className="text-xs">({averageDowntimeOverRegions(calculatedUptime)} % uptime)</span>
-                  </Tippy>
-                )
-              }
+              {!loading && (
+                <Tippy
+                  animation={false}
+                  content={calculatedUptime.map((region) => (
+                    <div key={region.region}>
+                      {region.percentage}% in {region.region}
+                    </div>
+                  ))}
+                >
+                  <span className="text-xs">
+                    ({averageDowntimeOverRegions(calculatedUptime)} % uptime)
+                  </span>
+                </Tippy>
+              )}
             </button>
           </h2>
           <p className="mt-1 sm:mt-0 text-gray-700">

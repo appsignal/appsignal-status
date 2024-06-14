@@ -10,7 +10,7 @@ export const formatRegion = (region) => {
 };
 
 export const timeseriesByDay = (timeseries, expectedRegions) => {
-  if (timeseries === undefined) return []
+  if (timeseries === undefined) return [];
   return sortedTimeseries(timeseries.slice()).reduce((group, timeserie) => {
     const startOfDay = dayjs(timeserie.timestamp).startOf("day").utc().format();
 
@@ -70,5 +70,5 @@ export const fillMissingDataPoints = (timeseries, expectedDays) => {
 };
 
 export const roundDecimal = (number) => {
-  return parseInt(number.toFixed(3) * 100) / 100
-}
+  return parseInt(number.toFixed(3) * 100) / 100;
+};
