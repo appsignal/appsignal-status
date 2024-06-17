@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Tippy from "@tippyjs/react";
+
 import OutagesOverlay from "../OutagesOverlay";
 import UptimeDots from "../UptimeDots";
+
+import {
+  timeseriesByDay as groupTimeseriesByDay,
+  roundDecimal,
+} from "../../utils";
 
 export const LoadingDot = () => {
   return (
@@ -22,6 +29,45 @@ export const UptimeMonitorLoading = () => {
       })}
     </div>
   );
+};
+
+export const calculateUptime = (timeseries, regions) => {
+  const timeseriesByDay = groupTimeseriesByDay(timeseries, regions);
+  const timeSeriesLast30Days = timeseriesByDay
+    .slice(-30, timeseriesByDay.length - 1)
+    .filter((item) => item.missingDataPoint === false);
+  const minutesPerDay = 1440.0;
+
+  const downtimePerRegion = [];
+
+  regions.map((region) => {
+    const downtimeInMinutes = timeSeriesLast30Days.reduce((acc, item) => {
+      return acc + item.values[region];
+    }, 0);
+
+    const uptimePercentage =
+      100 -
+      roundDecimal(
+        (100.0 / (minutesPerDay * timeSeriesLast30Days.length)) *
+          downtimeInMinutes
+      );
+
+    downtimePerRegion.push({
+      region: region,
+      minutes: downtimeInMinutes,
+      percentage: uptimePercentage,
+    });
+  });
+
+  return downtimePerRegion;
+};
+
+export const averageDowntimeOverRegions = (downtimePerRegion) => {
+  const average =
+    Object.values(downtimePerRegion).reduce((acc, item) => {
+      return (acc += item.percentage);
+    }, 0) / Object.keys(downtimePerRegion).length;
+  return roundDecimal(average).toFixed(2);
 };
 
 const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
@@ -45,6 +91,11 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
     return () => (mounted = false);
   }, [uptimeMonitor.id, uptimeMonitor.endpoint]);
 
+  const calculatedUptime = calculateUptime(
+    monitor.timeseries,
+    uptimeMonitor.regions
+  );
+
   return (
     <>
       <div className="px-6 py-5 space-y-3" data-testid="UptimeMonitor">
@@ -54,7 +105,21 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
               className="c_h-heading focus:outline-none"
               onClick={() => setOverlayOpen(true)}
             >
-              {uptimeMonitor.title}
+              {uptimeMonitor.title}&nbsp;
+              {!loading && (
+                <Tippy
+                  animation={false}
+                  content={calculatedUptime.map((region) => (
+                    <div key={region.region}>
+                      {region.percentage}% in {region.region}
+                    </div>
+                  ))}
+                >
+                  <span className="text-xs">
+                    ({averageDowntimeOverRegions(calculatedUptime)} % uptime)
+                  </span>
+                </Tippy>
+              )}
             </button>
           </h2>
           <p className="mt-1 sm:mt-0 text-gray-700">
