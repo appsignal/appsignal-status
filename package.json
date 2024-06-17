@@ -20,7 +20,7 @@
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@tailwindcss/typography": "^0.5.9",
     "@tippyjs/react": "^4.2.5",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.19",
     "dayjs": "^1.11.11",
     "mockdate": "^3.0.5",
     "msw": "^0.35.0",
