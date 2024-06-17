@@ -23,6 +23,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
                 class="c_h-heading focus:outline-none"
               >
                 Always Down
+                 
               </button>
             </h2>
             <p
@@ -171,6 +172,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
                 class="c_h-heading focus:outline-none"
               >
                 blog
+                 
               </button>
             </h2>
             <p
@@ -319,6 +321,7 @@ exports[`UptimeMonitors renders without problems 1`] = `
                 class="c_h-heading focus:outline-none"
               >
                 homepage
+                 
               </button>
             </h2>
             <p

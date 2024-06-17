@@ -1663,10 +1663,10 @@
     {
       "timestamp": "2021-08-20T08:00:00.000Z",
       "values": {
-        "europe": 48,
-        "north-america": 48,
-        "south-america": 48,
-        "asia-pacific": 48
+        "europe": 60,
+        "north-america": 60,
+        "south-america": 60,
+        "asia-pacific": 60
       }
     },
     {
@@ -2898,7 +2898,7 @@
       "values": {
         "europe": 60,
         "north-america": 60,
-        "south-america": 59,
+        "south-america": 60,
         "asia-pacific": 60
       }
     },
@@ -3391,10 +3391,10 @@
     {
       "timestamp": "2021-08-05T01:00:00.000Z",
       "values": {
-        "europe": 61,
-        "north-america": 61,
-        "south-america": 61,
-        "asia-pacific": 61
+        "europe": 60,
+        "north-america": 60,
+        "south-america": 60,
+        "asia-pacific": 60
       }
     },
     {
@@ -5065,10 +5065,10 @@
     {
       "timestamp": "2021-08-23T19:00:00.000Z",
       "values": {
-        "europe": 61,
-        "north-america": 61,
-        "south-america": 61,
-        "asia-pacific": 61
+        "europe": 60,
+        "north-america": 60,
+        "south-america": 60,
+        "asia-pacific": 60
       }
     },
     {
@@ -5659,10 +5659,10 @@
     {
       "timestamp": "2021-08-09T20:00:00.000Z",
       "values": {
-        "europe": 68,
-        "north-america": 68,
-        "south-america": 68,
-        "asia-pacific": 68
+        "europe": 60,
+        "north-america": 60,
+        "south-america": 60,
+        "asia-pacific": 60
       }
     },
     {
@@ -6010,10 +6010,10 @@
     {
       "timestamp": "2021-08-23T18:00:00.000Z",
       "values": {
-        "europe": 59,
-        "north-america": 59,
-        "south-america": 59,
-        "asia-pacific": 59
+        "europe": 60,
+        "north-america": 60,
+        "south-america": 60,
+        "asia-pacific": 60
       }
     },
     {
@@ -6237,7 +6237,7 @@
       "values": {
         "europe": 60,
         "north-america": 60,
-        "south-america": 59,
+        "south-america": 60,
         "asia-pacific": 60
       }
     },
