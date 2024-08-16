@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import OutagesByDay from "../OutagesByDay";
 import { timeseriesByDay } from "../../utils";
 
@@ -21,6 +22,11 @@ const Outages = ({ timeseries, regions }) => {
   } else {
     return <p>No outages in the past 30 days</p>;
   }
+};
+
+Outages.propTypes = {
+  timeseries: PropTypes.array.isRequired,
+  regions: PropTypes.array.isRequired,
 };
 
 export default Outages;

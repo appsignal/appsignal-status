@@ -41,6 +41,10 @@ export const calculateUptime = (timeseries, regions) => {
   const downtimePerRegion = [];
 
   regions.map((region) => {
+    if (timeSeriesLast30Days.length == 0) {
+      return 0;
+    }
+
     const downtimeInMinutes = timeSeriesLast30Days.reduce((acc, item) => {
       return acc + item.values[region];
     }, 0);
@@ -63,6 +67,10 @@ export const calculateUptime = (timeseries, regions) => {
 };
 
 export const averageDowntimeOverRegions = (downtimePerRegion) => {
+  if (Object.keys(downtimePerRegion).length == 0) {
+    return 0;
+  }
+
   const average =
     Object.values(downtimePerRegion).reduce((acc, item) => {
       return (acc += item.percentage);
