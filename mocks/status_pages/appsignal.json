@@ -45,6 +45,14 @@
       "description": "This endpoint will always be down!",
       "regions": ["europe", "south-america", "north-america", "asia-pacific"],
       "endpoint": "https://api.appsignal-status.online/status_pages/1/monitors/always-down.json"
+    },
+    {
+      "id": "only-one-metric",
+      "title": "only one metric",
+      "url": "https://appsignal.com",
+      "description": "Only one metric",
+      "regions": ["asia-pacific"],
+      "endpoint": "https://api.appsignal-status.online/status_pages/1/monitors/only-one-metric.json"
     }
   ]
 }

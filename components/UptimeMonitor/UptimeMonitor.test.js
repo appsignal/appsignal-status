@@ -1,6 +1,9 @@
 import { render, screen, waitFor } from "@testing-library/react";
 
-import UptimeMonitor, { UptimeMonitorLoading } from "./UptimeMonitor";
+import UptimeMonitor, {
+  UptimeMonitorLoading,
+  averageDowntimeOverRegions,
+} from "./UptimeMonitor";
 import statusPageMock from "../../mocks/status_pages/appsignal.json";
 
 const build = (props = {}) => {
@@ -66,5 +69,11 @@ describe("UptimeMonitorLoading", () => {
     render(<UptimeMonitorLoading />);
     const loadingDots = screen.getAllByTestId("loadingDot");
     expect(loadingDots.length).toEqual(30);
+  });
+
+  describe("averageDowntimeOverRegions", () => {
+    test("returns 0 if no regions are present", () => {
+      expect(averageDowntimeOverRegions([])).toEqual(0);
+    });
   });
 });

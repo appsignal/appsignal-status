@@ -458,6 +458,155 @@ exports[`UptimeMonitors renders without problems 1`] = `
             />
           </div>
         </div>
+        <div
+          class="px-6 py-5 space-y-3"
+          data-testid="UptimeMonitor"
+        >
+          <div
+            class="sm:flex justify-between"
+          >
+            <h2>
+              <button
+                class="c_h-heading focus:outline-none"
+              >
+                only one metric
+                 
+              </button>
+            </h2>
+            <p
+              class="mt-1 sm:mt-0 text-gray-700"
+            >
+              Monitoring from 
+              1
+               
+              location
+            </p>
+          </div>
+          <div
+            class="flex space-x-1"
+          >
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+            <div
+              class="h-8 flex-grow animate-pulse bg-gray-200 rounded"
+              data-testid="loadingDot"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </section>
