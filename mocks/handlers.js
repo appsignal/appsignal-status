@@ -3,11 +3,13 @@ import { rest } from "msw";
 const alwaysDown = require("./monitors/always-down.json");
 const blog = require("./monitors/blog.json");
 const homepage = require("./monitors/homepage.json");
+const onlyOneMetric = require("./monitors/only-one-metric.json");
 
 const monitorMapping = {
   "always-down": alwaysDown,
   blog,
   homepage,
+  "only-one-metric": onlyOneMetric,
 };
 
 export const handlers = [
