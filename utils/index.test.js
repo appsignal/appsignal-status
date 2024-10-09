@@ -99,6 +99,56 @@ describe("#timeseriesByDay", () => {
 
     expect(byDay[0].missingDataPoint).toBeTruthy();
   });
+
+  test("it does not mark a day as missing if monitor regions is less than returned regions", () => {
+    const groupedTimeseries = timeseriesByDay(homepageMock.timeseries, [
+      "europe",
+      "asia-pacific",
+    ]).slice(0, 5);
+
+    expect(groupedTimeseries).toEqual([
+      {
+        missingDataPoint: false,
+        timestamp: "2021-07-26T00:00:00Z",
+        values: {
+          "asia-pacific": 20,
+          europe: 5,
+        },
+      },
+      {
+        missingDataPoint: false,
+        timestamp: "2021-07-27T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          europe: 0,
+        },
+      },
+      {
+        missingDataPoint: false,
+        timestamp: "2021-07-28T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          europe: 0,
+        },
+      },
+      {
+        missingDataPoint: false,
+        timestamp: "2021-07-29T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          europe: 0,
+        },
+      },
+      {
+        missingDataPoint: false,
+        timestamp: "2021-07-30T00:00:00Z",
+        values: {
+          "asia-pacific": 0,
+          europe: 0,
+        },
+      },
+    ]);
+  });
 });
 
 describe("#fillMissingDataPoints", () => {
