@@ -30,14 +30,18 @@ export const timeseriesByDay = (timeseries, expectedRegions) => {
       currentGroup.missingDataPoint = true;
       currentGroup.values = {};
     } else {
-      if (!currentGroup.missingDataPoint)
-        currentGroup.missingDataPoint =
-          Object.keys(timeserie.values).length !== expectedRegions.length;
+      for (const region of expectedRegions) {
+        let value = timeserie.values[region];
 
-      Object.keys(timeserie.values).map((region) => {
-        if (!currentGroup.values[region]) currentGroup.values[region] = 0;
-        currentGroup.values[region] += timeserie.values[region];
-      });
+        if (!currentGroup.values[region]) {
+          currentGroup.values[region] = 0;
+        }
+        if (!isNaN(value)) {
+          currentGroup.values[region] += value;
+        } else {
+          currentGroup.missingDataPoint = true;
+        }
+      }
     }
 
     return group;
