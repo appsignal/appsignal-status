@@ -14,10 +14,10 @@ const StatusUpdate = ({ update }) => {
       <div className="mr-4 my-0.5">
         <StatusIcon status={update.state} />
       </div>
-      <div className="">
+      <div className="min-w-0">
         <h3 className="c_h-heading mb-1">{update.title}</h3>
         {update.description && (
-          <p className="text-gray-700">{update.description}</p>
+          <p className="text-gray-700 break-words">{update.description}</p>
         )}
         <p className="text-gray-600 text-ms mt-2">
           {dayjs(update.time).format("MMM. Do HH:mm")}
