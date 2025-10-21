@@ -1,75 +1,74 @@
 on: [push]
 name: CI
 
-
 jobs:
   linting:
     runs-on: ubuntu-latest
     environment: CI
     steps:
-    - uses: actions/checkout@v2
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Install dependencies
-      run: |
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
-        rm .npmrc
-        yarn install
-    - name: Run ESLint
-      run: yarn lint
+      - uses: actions/checkout@v4
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v4
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: |
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
+          rm .npmrc
+          yarn install
+      - name: Run ESLint
+        run: yarn lint
   formatting:
     runs-on: ubuntu-latest
     environment: CI
     steps:
-    - uses: actions/checkout@v2
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Install dependencies
-      run: |
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
-        rm .npmrc
-        yarn install
-    - name: Run Format check
-      run: yarn format:check
+      - uses: actions/checkout@v4
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v4
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: |
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
+          rm .npmrc
+          yarn install
+      - name: Run Format check
+        run: yarn format:check
 
   tests:
     runs-on: ubuntu-latest
     environment: CI
     steps:
-    - uses: actions/checkout@v2
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-    - uses: actions/cache@v2
-      id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-    - name: Install dependencies
-      run: |
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
-        rm .npmrc
-        yarn install
-    - name: Run jest
-      run: yarn test
+      - uses: actions/checkout@v4
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v4
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install dependencies
+        run: |
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_TOKEN }}"
+          rm .npmrc
+          yarn install
+      - name: Run jest
+        run: yarn test
