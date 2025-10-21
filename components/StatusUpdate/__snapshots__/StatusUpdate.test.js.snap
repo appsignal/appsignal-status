@@ -31,7 +31,7 @@ exports[`StatusUpdate renders without errors 1`] = `
       </span>
     </div>
     <div
-      class=""
+      class="min-w-0"
     >
       <h3
         class="c_h-heading mb-1"
@@ -39,7 +39,7 @@ exports[`StatusUpdate renders without errors 1`] = `
         Some update
       </h3>
       <p
-        class="text-gray-700"
+        class="text-gray-700 break-words"
       >
         Some description
       </p>
