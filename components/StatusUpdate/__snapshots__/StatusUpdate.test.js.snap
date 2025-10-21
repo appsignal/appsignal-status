@@ -14,7 +14,7 @@ exports[`StatusUpdate renders without errors 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="svg-inline--fa fa-exclamation fa-w-6 fa-fw "
+          class="svg-inline--fa fa-exclamation fa-fw "
           data-icon="exclamation"
           data-prefix="fas"
           focusable="false"
