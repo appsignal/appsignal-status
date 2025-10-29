@@ -10,8 +10,8 @@ const Header = ({ title }) => {
             {title}
           </a>
           <div className="h-6 w-px bg-gray-200 rounded" />
-          <Link href="/">
-            <a className="no-underline text-gray-700">Status</a>
+          <Link href="/" className="no-underline text-gray-700">
+            Status
           </Link>
         </nav>
       </div>

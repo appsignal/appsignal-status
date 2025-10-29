@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import fetch from "cross-fetch";
 import Tippy from "@tippyjs/react";
 
 import OutagesOverlay from "../OutagesOverlay";

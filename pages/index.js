@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Head from "next/head";
+import fetch from "cross-fetch";
 
 import Header from "../components/Header";
 import CurrentStatus from "../components/CurrentStatus";
@@ -11,7 +12,8 @@ const App = ({ statusPage }) => {
   return (
     <>
       <Head>
-        <title>{statusPage.title} Status</title>
+        {/* Use interpolation to avoid creating multiple text nodes in the title tag */}
+        <title>{`${statusPage.title} Status`}</title>
       </Head>
       <Header title={statusPage.title} />
       <main>
