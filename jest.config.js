@@ -4,7 +4,10 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/setupTestsAfterEnv.js"],
   globalSetup: "<rootDir>/jest.global-setup.js",
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+    "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
   },
   testEnvironment: "jsdom",
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/$1",
+  },
 };

@@ -1,17 +1,19 @@
 import PropTypes from "prop-types";
 import Head from "next/head";
+import fetch from "cross-fetch";
 
-import Header from "../components/Header";
-import CurrentStatus from "../components/CurrentStatus";
-import Footer from "../components/Footer";
-import StatusUpdates from "../components/StatusUpdates";
-import UptimeMonitors from "../components/UptimeMonitors";
+import Header from "../components/Header/Header";
+import CurrentStatus from "../components/CurrentStatus/CurrentStatus";
+import Footer from "../components/Footer/Footer";
+import StatusUpdates from "../components/StatusUpdates/StatusUpdates";
+import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors";
 
 const App = ({ statusPage }) => {
   return (
     <>
       <Head>
-        <title>{statusPage.title} Status</title>
+        {/* Use interpolation to avoid creating multiple text nodes in the title tag */}
+        <title>{`${statusPage.title} Status`}</title>
       </Head>
       <Header title={statusPage.title} />
       <main>

@@ -1,9 +1,9 @@
-import { rest } from "msw";
-
+const { rest } = require("msw");
 const alwaysDown = require("./monitors/always-down.json");
 const blog = require("./monitors/blog.json");
 const homepage = require("./monitors/homepage.json");
 const onlyOneMetric = require("./monitors/only-one-metric.json");
+const appsignalStatus = require("./status_pages/appsignal.json");
 
 const monitorMapping = {
   "always-down": alwaysDown,
@@ -12,11 +12,11 @@ const monitorMapping = {
   "only-one-metric": onlyOneMetric,
 };
 
-export const handlers = [
+const handlers = [
   rest.get(
     "https://api.appsignal-status.online/status_pages/:statusPageId.json",
     (_req, res, ctx) => {
-      return res(ctx.json(require("./status_pages/appsignal.json")));
+      return res(ctx.json(appsignalStatus));
     }
   ),
   rest.get(
@@ -27,3 +27,5 @@ export const handlers = [
     }
   ),
 ];
+
+module.exports = { handlers };

@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import fetch from "cross-fetch";
 import Tippy from "@tippyjs/react";
 
-import OutagesOverlay from "../OutagesOverlay";
-import UptimeDots from "../UptimeDots";
+import OutagesOverlay from "../OutagesOverlay/OutagesOverlay";
+import UptimeDots from "../UptimeDots/UptimeDots";
 
 import {
   timeseriesByDay as groupTimeseriesByDay,

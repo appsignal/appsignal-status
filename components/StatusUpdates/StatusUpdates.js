@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import StatusUpdate from "../StatusUpdate";
+import StatusUpdate from "../StatusUpdate/StatusUpdate";
 
 const StatusUpdates = ({ updates }) => {
   return (

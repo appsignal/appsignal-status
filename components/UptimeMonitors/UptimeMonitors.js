@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import UptimeMonitor from "../UptimeMonitor";
+import UptimeMonitor from "../UptimeMonitor/UptimeMonitor";
 
 const UptimeMonitors = ({ statusPage }) => {
   // Display uptime monitors in alphabetical order

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import OutagesByDay from "../OutagesByDay";
+import OutagesByDay from "../OutagesByDay/OutagesByDay";
 import { timeseriesByDay } from "../../utils";
 
 const Outages = ({ timeseries, regions }) => {
