@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import Outage from "../Outage";
+import Outage from "../Outage/Outage";
 
 const OutagesByDay = ({ timeserie }) => {
   return (

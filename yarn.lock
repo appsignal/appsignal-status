@@ -1960,11 +1960,6 @@ babel-jest@^29.7.0:
     graceful-fs "^4.2.9"
     slash "^3.0.0"
 
-babel-plugin-directory-named@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-directory-named/-/babel-plugin-directory-named-1.2.0.tgz#fe4286c5389927170d129238f3d8e5caecd222a0"
-  integrity sha512-nECK46nzC7+ojz3vNXCupYoWjfDXDn8j3efptviX9KF7EF7UkP4d4WjS0pvQ01Q5exZn3P8d5R96Xws1yz3tbA==
-
 babel-plugin-istanbul@^6.1.1:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-6.1.1.tgz#fa88ec59232fd9b4e36dbbc540a8ec9a9b47da73"
