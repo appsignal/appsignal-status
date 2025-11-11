@@ -30,11 +30,11 @@ describe("StatusUpdates", () => {
 
     const updates = screen.getAllByTestId("statusUpdate");
 
-    expect(updates[0].querySelector("h3").innerHTML).toContain(
+    expect(updates[1].querySelector("h3").innerHTML).toContain(
       statusPageMock.updates[1].title
     );
 
-    expect(updates[1].querySelector("h3").innerHTML).toContain(
+    expect(updates[2].querySelector("h3").innerHTML).toContain(
       statusPageMock.updates[0].title
     );
   });

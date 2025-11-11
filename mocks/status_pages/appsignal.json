@@ -19,6 +19,13 @@
       "description": null,
       "state": "resolved",
       "time": "2021-09-01T08:44:28.265Z"
+    },
+    {
+      "id": "update-three",
+      "title": "We are investigating the issue",
+      "description": "We ran into following issues:\n- The first item\n- The second item\n- The third item\n\nEverything should be working fine soon. We are working on it. Please check back later. Meanwhile, visit [https://www.appsignal.com](https://www.appsignal.com) to learn more about AppSignal.",
+      "state": "investigating",
+      "time": "2021-09-02T08:44:28.265Z"
     }
   ],
   "uptime_monitors": [
