@@ -59,7 +59,7 @@ exports[`StatusUpdates it renders without errors 1`] = `
               We are investigating the issue
             </h3>
             <div
-              class="prose [&_*]:text-gray-800 "
+              class="prose !text-gray-800 "
             >
               We ran into following issues:
 - The first item
@@ -155,7 +155,7 @@ Everything should be working fine soon. We are working on it. Please check back 
               Some update
             </h3>
             <div
-              class="prose [&_*]:text-gray-800 "
+              class="prose !text-gray-800 "
             >
               Some description
             </div>

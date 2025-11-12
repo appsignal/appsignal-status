@@ -39,7 +39,7 @@ exports[`StatusUpdate renders without errors 1`] = `
         Some update
       </h3>
       <div
-        class="prose [&_*]:text-gray-800 "
+        class="prose !text-gray-800 "
       >
         Some description
       </div>
