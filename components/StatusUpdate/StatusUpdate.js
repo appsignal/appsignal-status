@@ -4,6 +4,7 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 dayjs.extend(advancedFormat);
 
 import StatusIcon from "../StatusIcon/StatusIcon";
+import Markdown from "../Markdown/Markdown";
 
 const StatusUpdate = ({ update }) => {
   return (
@@ -16,9 +17,7 @@ const StatusUpdate = ({ update }) => {
       </div>
       <div className="min-w-0">
         <h3 className="c_h-heading mb-1">{update.title}</h3>
-        {update.description && (
-          <p className="text-gray-700 break-words">{update.description}</p>
-        )}
+        {update?.description && <Markdown>{update.description}</Markdown>}
         <p className="text-gray-600 text-ms mt-2">
           {dayjs(update.time).format("MMM. Do HH:mm")}
         </p>
