@@ -1,0 +1,7 @@
+html {
+  @apply font-body text-gray-800 antialiased;
+}
+
+a {
+  @apply underline;
+}
