@@ -2,3 +2,4 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "@appsignal-tools/design-system";
+@import "tippy.js/dist/tippy.css";

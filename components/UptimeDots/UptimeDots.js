@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import UptimeDot from "../UptimeDot";
+import UptimeDot from "../UptimeDot/UptimeDot";
 import { fillMissingDataPoints, timeseriesByDay } from "../../utils";
 
 const UptimeDots = ({ timeseries, regions, threshold }) => {

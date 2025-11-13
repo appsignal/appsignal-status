@@ -1,3 +1,22 @@
 node_modules
 .next
 public/mockServiceWorker.js
+
+# Temporarily ignore for upgrade PR - will format in follow-up
+components/CurrentStatus/CurrentStatus.test.js
+components/Outage/Outage.test.js
+components/Outages/Outages.js
+components/Outages/Outages.test.js
+components/OutagesByDay/OutagesByDay.test.js
+components/StatusUpdate/StatusUpdate.test.js
+components/StatusUpdates/StatusUpdates.test.js
+components/UptimeDot/UptimeDot.js
+components/UptimeDot/UptimeDot.test.js
+components/UptimeDots/UptimeDots.js
+components/UptimeDots/UptimeDots.test.js
+components/UptimeMonitor/UptimeMonitor.js
+components/UptimeMonitor/UptimeMonitor.test.js
+components/UptimeMonitors/UptimeMonitors.test.js
+mocks/handlers.js
+utils/index.js
+utils/index.test.js

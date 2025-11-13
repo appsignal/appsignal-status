@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import Overlay from "../Overlay/Overlay";
-import Outages from "../Outages";
+import Outages from "../Outages/Outages";
 
 const OutagesOverlay = ({ timeseries, regions, open, handleClose, title }) => {
   return (
