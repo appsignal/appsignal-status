@@ -12,12 +12,11 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@appsignal-tools/design-system@^16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@appsignal-tools/design-system/-/design-system-16.0.0.tgz#48f1887436041ba98a6b7df7b2d8baa869bd4e79"
-  integrity sha512-1tkzd9JLbTwTX//+EAmRIarH+M7Gf/7vzWv9mG24pCmUhkczFbY7CTNCpJQBiAwiSuGIgIseVBh7Hk2wug+HEw==
+"@appsignal-tools/design-system@^20.1.3":
+  version "20.1.3"
+  resolved "https://registry.yarnpkg.com/@appsignal-tools/design-system/-/design-system-20.1.3.tgz#cd543049ea57b2ae77fd86c5f8e6a7a038f489ac"
+  integrity sha512-CWR+Rv4U9h9QFtnAdiHUhw012jGQaD4X4jUUaM7vverO5x6EGfvyglLqiKo+pieoY7p8UHeEO2v2kYysohMPVQ==
   dependencies:
-    "@tippyjs/react" "^4.0.0"
     js-cookie "^3.0.1"
     react-intersection-observer "^9.4.0"
     react-medium-image-zoom "4.3.5"
@@ -1251,7 +1250,7 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-"@tippyjs/react@^4.0.0", "@tippyjs/react@^4.2.5":
+"@tippyjs/react@^4.2.5":
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/@tippyjs/react/-/react-4.2.6.tgz#971677a599bf663f20bb1c60a62b9555b749cc71"
   integrity sha512-91RicDR+H7oDSyPycI13q3b7o4O60wa2oRbjlz2fyRLmHImc4vyDwuUP8NtZaN0VARJY5hybvDYrFzhY9+Lbyw==
