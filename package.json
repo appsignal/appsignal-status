@@ -24,7 +24,7 @@
     "dayjs": "^1.11.19",
     "mockdate": "^3.0.5",
     "msw": "^1.3.2",
-    "next": "14.2.35",
+    "next": "16.1.1",
     "postcss": "^8.4.39",
     "postcss-import": "^15.1.0",
     "postcss-url": "^10.1.3",
