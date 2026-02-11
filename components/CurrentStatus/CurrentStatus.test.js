@@ -38,7 +38,7 @@ describe("CurrentStatus", () => {
     });
 
     expect(screen.getByRole("img", { hidden: true }).classList).toContain(
-      "fa-exclamation-triangle"
+      "fa-triangle-exclamation"
     );
 
     expect(
