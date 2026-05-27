@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import fetch from "cross-fetch";
 import Tippy from "@tippyjs/react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 
 import OutagesOverlay from "../OutagesOverlay/OutagesOverlay";
 import UptimeDots from "../UptimeDots/UptimeDots";
@@ -10,6 +12,8 @@ import {
   timeseriesByDay as groupTimeseriesByDay,
   roundDecimal,
 } from "../../utils";
+
+dayjs.extend(utc);
 
 export const LoadingDot = () => {
   return (
@@ -33,8 +37,13 @@ export const UptimeMonitorLoading = () => {
 
 export const calculateUptime = (timeseries, regions) => {
   const timeseriesByDay = groupTimeseriesByDay(timeseries, regions);
-  const timeSeriesLast30Days = timeseriesByDay
-    .slice(-30, timeseriesByDay.length - 1)
+  const latestDay = timeseriesByDay[timeseriesByDay.length - 1];
+  const completedTimeseriesByDay =
+    latestDay && dayjs(latestDay.timestamp).utc().isSame(dayjs().utc(), "day")
+      ? timeseriesByDay.slice(0, -1)
+      : timeseriesByDay;
+  const timeSeriesLast30Days = completedTimeseriesByDay
+    .slice(-30)
     .filter((item) => item.missingDataPoint === false);
   const minutesPerDay = 1440.0;
 

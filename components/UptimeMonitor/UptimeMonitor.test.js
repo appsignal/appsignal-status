@@ -1,8 +1,10 @@
 import { render, screen, waitFor } from "@testing-library/react";
+import MockDate from "mockdate";
 
 import UptimeMonitor, {
   UptimeMonitorLoading,
   averageDowntimeOverRegions,
+  calculateUptime,
 } from "./UptimeMonitor";
 import statusPageMock from "../../mocks/status_pages/appsignal.json";
 
@@ -75,5 +77,63 @@ describe("UptimeMonitorLoading", () => {
     test("returns 0 if no regions are present", () => {
       expect(averageDowntimeOverRegions([])).toEqual(0);
     });
+  });
+});
+
+describe("calculateUptime", () => {
+  afterEach(() => {
+    MockDate.reset();
+  });
+
+  test("includes the latest completed day in the uptime percentage", () => {
+    MockDate.set("2026-05-27T12:00:00Z");
+
+    const uptime = calculateUptime(
+      [
+        {
+          timestamp: "2026-05-25T12:00:00Z",
+          values: { europe: 0 },
+        },
+        {
+          timestamp: "2026-05-26T12:00:00Z",
+          values: { europe: 14 },
+        },
+      ],
+      ["europe"]
+    );
+
+    expect(uptime).toEqual([
+      {
+        region: "europe",
+        minutes: 14,
+        percentage: 99.52,
+      },
+    ]);
+  });
+
+  test("excludes the current in-progress day from the uptime percentage", () => {
+    MockDate.set("2026-05-27T12:00:00Z");
+
+    const uptime = calculateUptime(
+      [
+        {
+          timestamp: "2026-05-26T12:00:00Z",
+          values: { europe: 0 },
+        },
+        {
+          timestamp: "2026-05-27T12:00:00Z",
+          values: { europe: 14 },
+        },
+      ],
+      ["europe"]
+    );
+
+    expect(uptime).toEqual([
+      {
+        region: "europe",
+        minutes: 0,
+        percentage: 100,
+      },
+    ]);
   });
 });
