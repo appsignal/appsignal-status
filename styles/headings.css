@@ -1,0 +1,79 @@
+@layer components {
+  .c-heading--4xl {
+    @apply text-4xl font-semibold leading-tight mb-3;
+  }
+
+  .c-heading--3xl {
+    @apply text-3xl font-semibold leading-tight mb-3;
+  }
+
+  .c-heading--2xl {
+    @apply text-2xl font-semibold leading-tight mb-2;
+  }
+
+  .c-heading--xl {
+    @apply text-xl font-semibold leading-tight mb-2;
+  }
+
+  .c-heading--lg {
+    @apply text-lg font-semibold leading-tight mb-2;
+  }
+
+  .c-heading--base {
+    @apply text-base font-semibold leading-tight mb-2;
+  }
+
+  .c-heading {
+    @apply font-semibold leading-tight mb-2;
+  }
+
+  .c-heading--caps {
+    @apply text-sm font-bold leading-tight mb-2 tracking-wide uppercase;
+  }
+
+  /* Homepage Headings */
+
+  .c_h-heading {
+    @apply text-base leading-tight font-medium;
+  }
+
+  .c_h-heading--caps {
+    @apply text-base sm:text-lg xl:text-xl uppercase font-medium leading-tight tracking-wide;
+  }
+
+  .c_h-heading--8xl {
+    @apply text-8xl leading-tighter;
+  }
+
+  .c_h-heading--7xl {
+    @apply text-7xl leading-tighter;
+  }
+
+  .c_h-heading--6xl {
+    @apply text-6xl leading-tighter;
+  }
+
+  .c_h-heading--5xl {
+    @apply text-5xl leading-tighter;
+  }
+
+  .c_h-heading--4xl {
+    @apply text-4xl leading-tighter;
+  }
+
+  .c_h-heading--3xl {
+    @apply text-3xl leading-tighter;
+  }
+
+  .c_h-heading--2xl {
+    @apply text-2xl leading-tighter;
+  }
+
+  .c_h-heading--xl {
+    @apply text-xl;
+  }
+
+  .c_h-heading--lg {
+    @apply text-lg;
+  }
+}

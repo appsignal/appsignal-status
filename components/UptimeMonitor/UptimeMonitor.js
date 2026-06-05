@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import fetch from "cross-fetch";
 import Tippy from "@tippyjs/react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 
 import OutagesOverlay from "../OutagesOverlay/OutagesOverlay";
 import UptimeDots from "../UptimeDots/UptimeDots";
@@ -10,6 +12,8 @@ import {
   timeseriesByDay as groupTimeseriesByDay,
   roundDecimal,
 } from "../../utils";
+
+dayjs.extend(utc);
 
 export const LoadingDot = () => {
   return (
@@ -33,9 +37,15 @@ export const UptimeMonitorLoading = () => {
 
 export const calculateUptime = (timeseries, regions) => {
   const timeseriesByDay = groupTimeseriesByDay(timeseries, regions);
+  const now = dayjs().utc();
   const timeSeriesLast30Days = timeseriesByDay
-    .slice(-30, timeseriesByDay.length - 1)
-    .filter((item) => item.missingDataPoint === false);
+    .slice(-30)
+    .filter((item) => item.missingDataPoint === false)
+    .filter((item) => {
+      // Ignore a just-started current day until some uptime has actually elapsed.
+      return !dayjs(item.timestamp).utc().isSame(now, "day") ||
+        now.diff(dayjs(item.timestamp).utc(), "minute") > 0;
+    });
   const minutesPerDay = 1440.0;
 
   const downtimePerRegion = [];
@@ -48,12 +58,20 @@ export const calculateUptime = (timeseries, regions) => {
     const downtimeInMinutes = timeSeriesLast30Days.reduce((acc, item) => {
       return acc + item.values[region];
     }, 0);
+    const totalMeasuredMinutes = timeSeriesLast30Days.reduce((acc, item) => {
+      const timestamp = dayjs(item.timestamp).utc();
+
+      if (timestamp.isSame(now, "day")) {
+        return acc + now.diff(timestamp, "minute");
+      }
+
+      return acc + minutesPerDay;
+    }, 0);
 
     const uptimePercentage =
       100 -
       roundDecimal(
-        (100.0 / (minutesPerDay * timeSeriesLast30Days.length)) *
-          downtimeInMinutes
+        (100.0 / totalMeasuredMinutes) * downtimeInMinutes
       );
 
     downtimePerRegion.push({
