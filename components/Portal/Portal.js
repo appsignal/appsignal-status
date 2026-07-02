@@ -1,17 +1,14 @@
 import PropTypes from "prop-types";
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 
 const Portal = ({ children, selector = "#portal" }) => {
-  const ref = useRef(null);
-  const [mounted, setMounted] = useState(false);
+  const [container] = useState(() => {
+    if (typeof document === "undefined") return null;
+    return document.querySelector(selector);
+  });
 
-  useEffect(() => {
-    ref.current = document.querySelector(selector);
-    setMounted(true);
-  }, [selector]);
-
-  return mounted ? createPortal(children, ref.current) : null;
+  return container ? createPortal(children, container) : null;
 };
 
 Portal.propTypes = {
