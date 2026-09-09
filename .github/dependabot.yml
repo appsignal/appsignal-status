@@ -11,6 +11,8 @@ updates:
     cooldown:
       default-days: 7
       include: ["*"]
+    allow:
+      - dependency-type: "direct"
     commit-message:
       prefix: "chore"
       include: "scope"
