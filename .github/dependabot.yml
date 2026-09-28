@@ -16,11 +16,21 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-    # Group minor and patch updates together
+    # Keep Next.js updates separate because minor releases can be breaking.
     groups:
+      nextjs:
+        patterns:
+          - "next"
+          - "eslint-config-next"
+        update-types:
+          - "minor"
+          - "patch"
       minor-and-patch:
         patterns:
           - "*"
+        exclude-patterns:
+          - "next"
+          - "eslint-config-next"
         update-types:
           - "minor"
           - "patch"
