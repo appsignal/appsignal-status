@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import fetch from "cross-fetch";
@@ -8,7 +9,17 @@ import Footer from "../components/Footer/Footer";
 import StatusUpdates from "../components/StatusUpdates/StatusUpdates";
 import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors";
 
+export const POLL_INTERVAL_MS = 15 * 60 * 1000;
+
 const App = ({ statusPage }) => {
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      window.location.reload();
+    }, POLL_INTERVAL_MS);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <>
       <Head>
