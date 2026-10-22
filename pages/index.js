@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import fetch from "cross-fetch";
 
 import Header from "../components/Header/Header";
@@ -8,7 +10,22 @@ import Footer from "../components/Footer/Footer";
 import StatusUpdates from "../components/StatusUpdates/StatusUpdates";
 import UptimeMonitors from "../components/UptimeMonitors/UptimeMonitors";
 
+export const POLL_INTERVAL_MS = 15 * 60 * 1000;
+
 const App = ({ statusPage }) => {
+  const { asPath, replace } = useRouter();
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // A client-side navigation reruns getServerSideProps without reloading.
+      replace(asPath, undefined, { scroll: false }).catch((error) => {
+        console.error("Failed to refresh status page", error);
+      });
+    }, POLL_INTERVAL_MS);
+
+    return () => clearInterval(intervalId);
+  }, [asPath, replace]);
+
   return (
     <>
       <Head>
