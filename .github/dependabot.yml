@@ -7,15 +7,30 @@ updates:
       interval: "weekly"
       day: "monday"
       time: "09:00"
-    open-pull-requests-limit: 2
+    open-pull-requests-limit: 1
+    cooldown:
+      default-days: 7
+      include: ["*"]
+    allow:
+      - dependency-type: "direct"
     commit-message:
       prefix: "chore"
       include: "scope"
-    # Group minor and patch updates together
+    # Keep Next.js updates separate because minor releases can be breaking.
     groups:
+      nextjs:
+        patterns:
+          - "next"
+          - "eslint-config-next"
+        update-types:
+          - "minor"
+          - "patch"
       minor-and-patch:
         patterns:
           - "*"
+        exclude-patterns:
+          - "next"
+          - "eslint-config-next"
         update-types:
           - "minor"
           - "patch"
@@ -29,7 +44,16 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 1
+    cooldown:
+      default-days: 7
+      include: ["*"]
     commit-message:
       prefix: "ci"
       include: "scope"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
