@@ -102,6 +102,7 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
   const [monitor, setMonitor] = React.useState([]);
 
   React.useEffect(() => {
+    // New server props should refresh metrics even when the endpoint is unchanged.
     // We use the mounted variable to make sure React stops trying to use state
     // when the component is unmounted.
     let mounted = true;
@@ -115,7 +116,7 @@ const UptimeMonitor = ({ uptimeMonitor, threshold }) => {
       });
 
     return () => (mounted = false);
-  }, [uptimeMonitor.id, uptimeMonitor.endpoint]);
+  }, [uptimeMonitor]);
 
   const calculatedUptime = calculateUptime(
     monitor.timeseries,

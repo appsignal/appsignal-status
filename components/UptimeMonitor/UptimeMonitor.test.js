@@ -1,5 +1,8 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import MockDate from "mockdate";
+import { rest } from "msw";
+import { server } from "../../mocks/server";
+import homepage from "../../mocks/monitors/homepage.json";
 
 import UptimeMonitor, {
   UptimeMonitorLoading,
@@ -44,6 +47,32 @@ describe("UptimeMonitor", () => {
       const uptimeDots = screen.getAllByTestId("uptimeDot");
       expect(uptimeDots.length).toEqual(30);
     });
+  });
+
+  test("refetches metrics when refreshed server props keep the same endpoint", async () => {
+    const uptimeMonitor = { ...statusPageMock.uptime_monitors[0] };
+    const requests = jest.fn();
+    server.use(
+      rest.get(uptimeMonitor.endpoint, (_req, res, ctx) => {
+        requests();
+        return res(ctx.json(homepage));
+      })
+    );
+
+    const { rerender } = build({ uptimeMonitor });
+    await waitFor(() => {
+      expect(screen.queryAllByTestId("loadingDot")).toHaveLength(0);
+    });
+    expect(requests).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <UptimeMonitor
+        uptimeMonitor={{ ...uptimeMonitor }}
+        threshold={statusPageMock.threshold}
+      />
+    );
+
+    await waitFor(() => expect(requests).toHaveBeenCalledTimes(2));
   });
 
   describe("monitoring from X locations message", () => {
