@@ -1,7 +1,7 @@
 import { act, render, screen } from "@testing-library/react";
 import { useRouter } from "next/router";
 
-import App, { POLL_INTERVAL_MS } from "./index";
+import App, { POLL_INTERVAL_MS } from "../pages/index";
 import statusPageMock from "../mocks/status_pages/appsignal.json";
 
 jest.mock("next/router", () => ({ useRouter: jest.fn() }));
