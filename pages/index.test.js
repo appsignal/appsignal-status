@@ -38,11 +38,9 @@ describe("App", () => {
       jest.advanceTimersByTime(1);
     });
     expect(replace).toHaveBeenCalledTimes(1);
-    expect(replace).toHaveBeenCalledWith(
-      "/?view=uptime",
-      undefined,
-      { scroll: false },
-    );
+    expect(replace).toHaveBeenCalledWith("/?view=uptime", undefined, {
+      scroll: false,
+    });
 
     await act(async () => {
       jest.advanceTimersByTime(POLL_INTERVAL_MS);
